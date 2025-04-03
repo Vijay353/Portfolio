@@ -1,639 +1,2001 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vijay's Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXJKP5MVQW"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RXJKP5MVQW');
-    </script>
-	
-	
-    <style>
-        body { margin: 0; padding-top: 64px; }
-        .navbar-fixed { position: fixed; top: 0; width: 100%; z-index: 10; }
-        html { scroll-behavior: smooth; }
-        .active { color: #2563EB; font-weight: bold; }
-        .timeline::before { content: ''; position: absolute; left: 0; width: 2px; height: 100%; background-color: #046938; }
-        .timeline-item { display: flex; align-items: flex-start; justify-content: flex-start; margin-bottom: 2rem; position: relative; padding-left: 1.5rem; }
-        .timeline-icon, .timeline-icon-education { width: 20px; height: 20px; border-radius: 50%; position: absolute; left: -10px; top: 0.5rem; }
-        .timeline-icon { background-color: #4285F4; }
-        .timeline-icon-education { background-color: #388E3C; }
-        .timeline-content { background-color: #fff; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-left: 2.5rem; flex: 1; }
-        .project-image { width: 120%; height: 400px; object-fit: contain; }
-        .skill-icon { width: 55px; height: 55px; }
-        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .card-hover:hover { transform: scale(1.05); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
-		body {transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;}
-		
-       .dark { background-color: #1a202c;color: #f7fafc;}
-       .dark nav { background-color: #2d3748; }
-       .dark .nav-link { color: #cbd5e0; }
-    .dark .nav-link.active { color: #facc15; }
-    .dark-mode-toggle i { transition: color 0.3s ease-in-out; }
-    </style>
-	
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vijay's Portfolio</title>
+  <meta name="description" content="Portfolio website showcasing Vijay Kumar's skills in product management, UI/UX design, and development." />
+  <meta name="keywords" content="product management, UI/UX design, portfolio, HTML, CSS, JSP, responsive design, interactive website" />
+  <meta name="author" content="Vijay Kumar" />
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" />
+
+  <!-- Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <!-- Updated fonts: Roboto and Roboto Slab for a modern professional look -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXJKP5MVQW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RXJKP5MVQW');
+  </script>
+ 
+<style>
+  /* CSS Variables with Professional Blue */
+  :root {
+    --primary: #007BFF; /* Professional Blue */
+    --primary-dark: #0056B3; /* Darker Professional Blue */
+    --secondary: #10B981;
+    --accent: #F59E0B;
+    --text: #1F2937;
+    --text-light: #6B7280;
+    --background: #F9FAFB;
+    --card: #FFFFFF;
+    --border: #E5E7EB;
+    --dark-background: #111827;
+    --dark-card: #1F2937;
+    --dark-text: #F9FAFB;
+    --dark-text-light: #9CA3AF;
+    --dark-border: #374151;
+  }
+  
+  /* Global Reset & Base Styles */
+  body {
+      margin: 0;
+      padding-top: 64px;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      background-color: var(--background);
+      color: var(--text);
+    }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Roboto Slab', serif;
+      line-height: 1.2;
+    }
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 3rem; }
+    h3 { font-size: 2.5rem; }
+    h4 { font-size: 2rem; }
+    h5 { font-size: 1.75rem; }
+    h6 { font-size: 1.5rem; }
+  
+  /* Navbar & Header */
+  .navbar-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    transition: all 0.3s ease;
+  }
+  .navbar-scrolled {
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    padding: 0.5rem 0;
+  }
+  header {
+    background-color: var(--background);
+    transition: background-color 0.3s ease;
+  }
+  body.dark header {
+    background-color: var(--dark-background);
+  }
+  body.dark #mobile-menu {
+    background-color: var(--dark-background);
+  }
+  
+  /* Navigation Links */
+  .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0.5rem;
+    font-weight: normal;
+    display: inline-block;
+  }
+  
+  body.dark .nav-link { color: var(--dark-text); }
+  .nav-link:hover { color: var(--primary); }
+  body.dark .nav-link:hover { color: var(--accent); }
+  
+  .nav-link.active {
+    color: var(--primary) !important;
+    font-weight: 450;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 0.5px var(--primary);
+    background-color: rgba(0,123,255,0.05);
+    border-radius: 5px;
+  }
+  body.dark .nav-link.active {
+    color: #FFD700  !important;
+    text-shadow: 0 0 1px #FFD700;
+    background-color: rgba(255,215,0,0.08);
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-items {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  body.dark .nav-container { background-color: var(--dark-background); }
+  body.dark .nav-items { color: var(--dark-text); }
+  
+  /* Mobile Menu & Toggle */
+  #mobile-menu-toggle {
+    color: var(--text);
+  }
+  body.dark #mobile-menu-toggle { color: var(--dark-text); }
+  #mobile-menu-toggle:hover {
+    background-color: rgba(0,0,0,0.1);
+  }
+  body.dark #mobile-menu-toggle:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+  #mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: var(--background);
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    z-index: 40;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease, padding 0.3s ease, background-color 0.3s ease;
+  }
+  #mobile-menu.show {
+    display: block;
+    max-height: 100vh;
+    padding: 1rem 0;
+  }
+  body.dark #mobile-menu { border-color: var(--dark-border); }
+  
+  /* Animation Classes */
+  .fade-in { animation: fadeIn 0.5s ease forwards; }
+  .slide-up { animation: slideUp 0.5s ease forwards; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  
+  /* Accessibility Helpers */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  a:focus, button:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+  
+  
+  /* About me */
+  
+  /* Hover effect for key facts */
+.key-facts .fact {
+  transition: transform 0.3s ease;
+}
+.key-facts .fact:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth transition for skill progress bars */
+.skill-progress {
+  transition: width 0.5s ease;
+}
+
+/* Button hover effect for resume download */
+.btn.btn-secondary {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn.btn-secondary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+  
+  
+  /* Timeline */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 1px;
+  }
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  .timeline-item:hover { transform: translateX(5px); }
+  .timeline-icon,
+  .timeline-icon-education {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    left: -10px;
+    top: 0.5rem;
+    z-index: 10;
+    box-shadow: 0 0 0 4px var(--background);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .timeline-icon { background-color: var(--primary); }
+  .timeline-icon-education { background-color: var(--secondary); }
+  .timeline-item:hover .timeline-icon,
+  .timeline-item:hover .timeline-icon-education {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px var(--background), 0 0 0 8px rgba(0,123,255,0.2);
+  }
+  .timeline-content {
+    background-color: var(--card);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-left: 2.5rem;
+    flex: 1;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  body.dark .timeline-content {
+    background-color: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text);
+  }
+  .timeline-content:hover {
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* Experience & Education */
+  .experience-date {
+    background-color: var(--border);
+    color: var(--text);
+  }
+  body.dark .experience-date {
+    background-color: var(--dark-border);
+    color: var(--dark-text);
+  }
+  .experience-heading,
+  .education-heading {
+    color: #000;
+  }
+  
+  /* Project & Skill Images */
+  .project-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    transition: transform 0.5s ease;
+  }
+  .skill-icon {
+    width: 55px;
+    height: 55px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Card Hover Effects */
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border);
+  }
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+  }
+  
+  /* Dark Mode Overrides */
+  .dark {
+    --background: var(--dark-background);
+    --card: var(--dark-card);
+    --text: var(--dark-text);
+    --text-light: var(--dark-text-light);
+    --border: var(--dark-border);
+  }
+  .dark-mode-toggle {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: var(--text);
+  }
+  body.dark .dark-mode-toggle { color: var(--dark-text); }
+  .dark-mode-toggle:hover {
+    transform: rotate(20deg);
+    background-color: rgba(0,0,0,0.1);
+  }
+  body.dark .dark-mode-toggle:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+  
+  /* Product Brand */
+  .product-brand {
+    color: var(--text);
+    transition: color 0.3s ease-in-out;
+  }
+  body.dark .product-brand {
+    color: var(--dark-text);
+  }
+  
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    .nav-items {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .nav-link {
+      display: block;
+      width: 100%;
+      margin: 0.25rem 0;
+    }
+  }
+  @media (max-width: 767px) {
+    .md\:hidden { display: block !important; }
+    .md\:flex { display: none !important; }
+    .timeline::before { left: 20px; }
+    .timeline-item { padding-left: 3rem; }
+    .timeline-icon,
+    .timeline-icon-education { left: 10px; }
+    .timeline-content { margin-left: 0; }
+  }
+</style>
+
+
+ 
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-200">
-    <!-- Navigation Bar -->
-    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed top-0 w-full z-50">
-        <div class="container mx-auto px-4">
+
+
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-white">
+
+    <!-- Header and Navigation -->
+ <header class="fixed top-0 left-0 right-0 w-full z-50 shadow-md transition-all duration-300">
+    <div class="max-w-screen-2xl mx-auto flex justify-between items-center h-16">
+        <nav class="w-full px-4" aria-label="Main Navigation">
+            <!-- Centered content inside -->
             <div class="flex justify-between items-center h-16">
+                <!-- Branding -->
                 <div class="flex-shrink-0">
-                    <a href="#" class="font-bold text-xl dark:text-white">VIJAY KUMAR</a>
+                    <a href="#" class="group flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white font-bold transition-transform duration-300 group-hover:scale-110">VB</div>
+                        <span class="font-bold text-xl product-brand">VIJAY</span>
+                        <span class="sr-only">Vijay Kumar's Portfolio</span>
+                    </a>
                 </div>
-                <div class="hidden md:flex space-x-4">
-                    <a href="#about" class="nav-link text-gray-800 hover:text-blue-500 px-4 py-2">ABOUT</a>
-                    <a href="#experience" class="nav-link text-gray-800 hover:text-blue-500 px-4 py-2">EXPERIENCE</a>
-                    <a href="#projects" class="nav-link text-gray-800 hover:text-blue-500 px-4 py-2">PROJECTS</a>
-                    <a href="#case-studies" class="nav-link text-gray-800 hover:text-blue-500 px-4 py-2">CASE STUDIES</a>
-                    <a href="#skills" class="nav-link text-gray-800 hover:text-blue-500 px-4 py-2">SKILLS</a>
-                    <a href="#certifications" class="nav-link text-gray-800 hover:text-blue-500 px-4 py-2">CERTIFICATIONS</a>
-                    <a href="#education" class="nav-link text-gray-800 hover:text-blue-500 px-4 py-2">EDUCATION</a>
-                    <a href="#contact" class="nav-link text-gray-800 hover:text-blue-500 px-4 py-2">CONTACT</a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-1">
+                    <a href="#about" class="nav-link px-4 py-2 rounded-md transition-all duration-300">ABOUT</a>
+                    <a href="#experience" class="nav-link px-4 py-2 rounded-md transition-all duration-300">EXPERIENCE</a>
+                    <a href="#projects" class="nav-link px-4 py-2 rounded-md transition-all duration-300">PROJECTS</a>
+                    <a href="#case-studies" class="nav-link px-4 py-2 rounded-md transition-all duration-300">CASE STUDIES</a>
+                    <a href="#skills" class="nav-link px-4 py-2 rounded-md transition-all duration-300">SKILLS</a>
+                    <a href="#certifications" class="nav-link px-4 py-2 rounded-md transition-all duration-300">CERTIFICATIONS</a>
+                    <a href="#education" class="nav-link px-4 py-2 rounded-md transition-all duration-300">EDUCATION</a>
+                    <a href="#contact" class="nav-link px-4 py-2 rounded-md transition-all duration-300">CONTACT</a>
                 </div>
-                <button id="dark-mode-toggle" class="text-gray-800 dark:text-gray-200 focus:outline-none ml-4">
-                    <i class="fas fa-moon"></i>
-                </button>
-			
-				
-                <div class="md:hidden">
-                    <button id="mobile-menu-toggle" class="text-gray-800 hover:text-blue-500 focus:outline-none">
-                        <i class="fas fa-bars fa-lg"></i>
+
+                <!-- Dark mode + mobile toggle -->
+                <div class="flex items-center space-x-3">
+                    <button id="dark-mode-toggle" class="dark-mode-toggle p-2 rounded-full transition-colors duration-200" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                        <span class="sr-only">Toggle Dark Mode</span>
                     </button>
-                    <div id="mobile-menu" class="absolute top-16 right-0 bg-white shadow-md mt-2 rounded-md p-2 hidden">
-                        <a href="#about" class="nav-link block text-gray-800 hover:text-blue-500 py-1">ABOUT</a>
-                        <a href="#experience" class="nav-link block text-gray-800 hover:text-blue-500 py-1">EXPERIENCE</a>
-                        <a href="#projects" class="nav-link block text-gray-800 hover:text-blue-500 py-1">PROJECTS</a>
-                        <a href="#case-studies" class="nav-link block text-gray-800 hover:text-blue-500 py-1">CASE STUDIES</a>
-                        <a href="#skills" class="nav-link block text-gray-800 hover:text-blue-500 py-1">SKILLS</a>
-                        <a href="#certifications" class="nav-link block text-gray-800 hover:text-blue-500 py-1">CERTIFICATIONS</a>
-                        <a href="#education" class="nav-link block text-gray-800 hover:text-blue-500 py-1">EDUCATION</a>
-                        <a href="#contact" class="nav-link block text-gray-800 hover:text-blue-500 py-1">CONTACT</a>
-                    </div>
+                    <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-full transition-colors duration-200" aria-label="Toggle Mobile Menu">
+                        <i class="fas fa-bars fa-lg"></i>
+                        <span class="sr-only">Toggle Mobile Menu</span>
+                    </button>
                 </div>
             </div>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden" aria-hidden="true">
+        <div class="px-4 py-3">
+            <a href="#about" class="nav-link block py-2 rounded-md transition-all duration-300">ABOUT</a>
+            <a href="#experience" class="nav-link block py-2 rounded-md transition-all duration-300">EXPERIENCE</a>
+            <a href="#projects" class="nav-link block py-2 rounded-md transition-all duration-300">PROJECTS</a>
+            <a href="#case-studies" class="nav-link block py-2 rounded-md transition-all duration-300">CASE STUDIES</a>
+            <a href="#skills" class="nav-link block py-2 rounded-md transition-all duration-300">SKILLS</a>
+            <a href="#certifications" class="nav-link block py-2 rounded-md transition-all duration-300">CERTIFICATIONS</a>
+            <a href="#education" class="nav-link block py-2 rounded-md transition-all duration-300">EDUCATION</a>
+            <a href="#contact" class="nav-link block py-2 rounded-md transition-all duration-300">CONTACT</a>
         </div>
-    </nav>
+    </div>
+	
+</header>
 
-    <!-- Main Content Sections -->
+
+
     <main>
-        <!-- About Me Section -->
-        <section id="about" class="py-20 bg-white dark:bg-gray-900">
-            <div class="container mx-auto flex flex-col md:flex-row items-center justify-center text-center md:text-left">
-                <div class="md:w-1/3 mb-4 md:mb-0 flex flex-col items-center">
-                    <img src="images/myimage.png" alt="Your Image" class="rounded-full w-2/3 mx-auto mb-4">
-                    <div class="text-center dark:text-gray-200">
-                        <h2 class="text-2xl font-semibold">VIJAY KUMAR BANOTH</h2>
-                        <p class="text-xl">MS IN MANAGEMENT INFORMATION SYSTEMS</p>
-                        <a href="https://management.buffalo.edu/about/mission-vision.html" class="text-xl text-blue-600 hover:underline" target="_blank">UNIVERSITY AT BUFFALO</a>
-                    </div><br>
-                    <div class="mt-4 justify-center space-x-3">
-                        <a href="https://www.linkedin.com/in/vijaykumar353/" class="text-blue-600 hover:text-blue-800 card-hover group relative" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-                        <a href="https://github.com/Vijay353" class="text-gray-800 hover:text-gray-900 card-hover group relative" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                        <a href="/cdn-cgi/l/email-protection#0567646b6a716d736c6f647c6e706864773534456268646c692b666a68" class="text-blue-600 hover:text-blue-800 card-hover group relative" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
-						
-                    </div>
-					
-					
-					
-                </div>
-                <div class="md:w-2/3 md:pl-20 ">
-                    	<p class="text-2xl font-bold text-blue-600 dark:text-white-200 mb-4 ">TRANSFORMING TECHNICAL CHALLENGES INTO USER-CENTRIC SOLUTIONS</p>
-                    <h2 class="text-4xl font-bold text-black text-center mb-6">ABOUT ME</h2>
-				
-                    <p class="text-xl text-black mt-4">Hi, I am Vijay, a visionary and result-driven professional with nearly six years of experience bridging technical complexity with business strategy to drive innovation, mitigate risks, and enhance operational efficiency. Backed by CSPO® and LSSGB certifications, I specialize in optimizing product roadmaps, mitigating risks, and aligning technology with business objectives to deliver scalable, high-impact solutions.</p> 
-					<p class="text-xl text-black mt-4">My expertise lies in market analysis, regulatory compliance, and data-driven decision-making, integrating client feedback into actionable product enhancements while optimizing third-party ecosystems like Salesforce and SAP. I excel in cross-functional collaboration, ensuring seamless execution of Agile sprints and Lean frameworks to eliminate inefficiencies and drive product scalability.</p>
-					<p class="text-xl text-black mt-4">With an ITIL 4 certification and deep expertise in audit frameworks, governance, and security risk assessment, I bridge the gap between technical complexity and business value, leveraging Azure Cloud, API ecosystems, and automation to enhance compliance, performance, and security. Passionate about solving complex problems, enhancing product integrity, and driving measurable business outcomes, I am committed to shaping the future of technology, risk assurance, and strategic product growth through innovation and data-driven insights.</p>
-                   <!-- <div class="text-center mt-8">
-                        <a href="images/myresume.pdf" class="bg-blue-800 text-white text-xl py-3 px-8 rounded hover:bg-blue-700 transition duration-300 card-hover group relative " target="_blank" rel="noopener noreferrer">My Resume</a>
-                    </div> -->
-                </div>
-            </div>
-        </section>
+        <!-- Hero Section with Visual Appeal -->
+       
+	    <section id="hero" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-24 relative overflow-hidden">
+  
+  <!-- Animated Background Elements -->
+  <div class="absolute inset-0 overflow-hidden opacity-20">
+    <div class="absolute top-10 left-10 w-40 h-40 rounded-full bg-white opacity-10 animate-pulse"></div>
+    <div class="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-white opacity-10 animate-pulse" style="animation-delay: 1s;"></div>
+    <div class="absolute top-1/2 left-1/3 w-20 h-20 rounded-full bg-white opacity-10 animate-pulse" style="animation-delay: 0.5s;"></div>
+  </div>
+  
+  <!-- Hero Content -->
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-3/5 mb-10 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+          VIJAY KUMAR <span class="text-yellow-300">BANOTH</span>
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-gray-200">
+          TRANSFORMING TECHNICAL CHALLENGES INTO USER-CENTRIC SOLUTIONS
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#projects" class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            View My Work
+          </a>
+          <a href="#contact" class="bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+            Contact Me
+          </a>
+        </div>
+      </div>
+      <div class="md:w-2/5 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+        <div class="relative">
+          <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+            <img src="Images/profile.jpg" alt="Vijay Kumar" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute -bottom-4 -right-4 bg-yellow-400 text-blue-800 rounded-lg py-2 px-4 shadow-lg">
+            <span class="font-bold">5+ Years Experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Social Media Links with Hover Effects -->
+    <div class="flex justify-center md:justify-start space-x-4 mt-8">
+      <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-yellow-300 transition-colors duration-300" aria-label="LinkedIn Profile">
+        <i class="fab fa-linkedin fa-2x"></i>
+      </a>
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-yellow-300 transition-colors duration-300" aria-label="GitHub Profile">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+    </div>
+    
+    <!-- Scroll Down Indicator -->
+    <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <a href="#about" aria-label="Scroll down to about section">
+        <i class="fas fa-chevron-down fa-2x text-white"></i>
+      </a>
+    </div>
+  </div>
+</section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="py-20 bg-gray-100 dark:bg-gray-900">
-            <div class="container mx-auto flex flex-col md:flex-row">
-                <div class="w-1/3 pr-8">
-                    <h2 class="text-4xl font-bold mb-8">EXPERIENCE</h2>
-                </div>
-                <div class="w-2/3 relative timeline">
-				
-				<!-- First Company: HFHB -->
-				
-					<div class="timeline-item">
-					<div class="timeline-icon"></div>
-					<div class="timeline-content bg-white dark:bg-gray-800 shadow-lg rounded-lg card-hover group relative">
-						<div class="flex items-center mb-2">
-							<img src="Images/hfhb.png" alt="HFHB Logo" class="w-60 h-16 mr-3">
-							<div>
-								<h3 class="text-xl font-semibold dark:text-gray-200">PRODUCT MANAGEMENT INTERN</h3>
-								<a href="https://habitatbuffalo.org/who-we-are/about-habitat-buffalo" class="hover:underline text-gray-600" target="_blank"><h4>HFHB - PROJECT CLINIC</h4></a>
-								<p class="text-gray-500 dark:text-gray-300">JAN 2025 – PRESENT · BUFFALO, NY</p>
-								<p class="italic text-gray-900 dark:text-white-200">Streamlined homebuyer program processes by designing workflow maps, optimizing applicant tracking, and developing user-friendly pre-screening forms while collaborating with teams to enhance guidelines and financial literacy resources.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				
-				<!-- Second Company: DOZE -->
-					<div class="timeline-item">
-					<div class="timeline-icon"></div>
-					<div class="timeline-content bg-white dark:bg-gray-800 shadow-lg rounded-lg card-hover group relative">
-						<div class="flex items-center mb-2">
-							<img src="Images/doze01.png" alt="DOZE Logo" class="w-33 h-24 mr-3">
-							<div>
-								<h3 class="text-xl font-semibold dark:text-gray-200">PRODUCT MANAGEMENT INTERN</h3>
-								<a href="https://thedoze.co/" class="hover:underline text-gray-600" target="_blank"><h4>DOZE - PROJECT CLINIC</h4></a>
-								<p class="text-gray-500 dark:text-gray-300">JAN 2025 – PRESENT · BUFFALO, NY</p>
-								<p class="italic text-gray-900 dark:text-white-200">Conducted market analysis, developed product strategies, by identifying key customer segments, creating detailed personas and roadmaps, executed marketing initiatives, collaborated with influencers, and refined pricing strategies to enhance user targeting and optimize profitability.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				
-                    <!-- Third Company: SANA -->
-					<div class="timeline-item">
-					<div class="timeline-icon"></div>
-					<div class="timeline-content bg-white dark:bg-gray-800 shadow-lg rounded-lg card-hover group relative">
-						<div class="flex items-center mb-2">
-							<img src="Images/sana01.png" alt="SANA Logo" class="w-30 h-16 mr-3">
-							<div>
-								<h3 class="text-xl font-semibold dark:text-gray-200">PRODUCT MANAGEMENT INTERN</h3>
-								<a href="https://www.sanahealthandwellness.com/about" class="hover:underline text-gray-600" target="_blank"><h4>SANA - PROJECT CLINIC</h4></a>
-								<p class="text-gray-500 dark:text-gray-300">JAN 2025 – PRESENT · BUFFALO, NY</p>
-								<p class="italic text-gray-900 dark:text-white-200">Enhanced marketing strategies, created promotional materials, and optimized the website’s structure, content, and navigation to improve user experience and streamline client interactions.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-					
-
-					
-				
-
-                    <div class="timeline-item">
-                        <div class="timeline-icon"></div>
-                        <div class="timeline-content bg-white dark:bg-gray-800 shadow-lg rounded-lg card-hover group relative">
-                            <div class="flex items-center mb-2">
-                                 <img src="Images/SOM01.png" alt="Company Logo" class="w-25 h-7 mr-3">
-                                <div>
-                                    <h3 class="text-xl font-semibold dark:text-gray-200">TEACHING ASSISTANT</h3>
-                                    <a href="https://management.buffalo.edu/about/mission-vision/innovation-entrepreneurship-leadership.html" class="hover:underline text-gray-600" target="_blank"><h4>CORPORATE SOCIAL RESPONSIBILITY, UNIVERSITY AT BUFFALO</h4></a>
-                                    <p class="text-gray-500 dark:text-gray-300">AUG 2024 – DEC 2024 | BUFFALO, NY</p>
-									<p class="font- italic text-gray-900 dark:text-white-200">Graded assignments for 385+ students, conducted research on corporate ethics and crisis management to develop curriculum materials, and co-facilitated classes and panel discussions, providing feedback to enhance student learning and refine presentations.</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-icon"></div>
-                        <div class="timeline-content bg-white dark:bg-gray-800 shadow-lg rounded-lg card-hover group relative">
-                            <div class="flex items-center mb-2">
-                                 <img src="Images/Configit01.png" alt="Company Logo" class="w-25 h-11 mr-3">
-                                <div>
-                                    <h3 class="text-xl font-semibold dark:text-gray-200">SENIOR SOLUTION SUPPORT ENGINEER</h3>
-                                    <a href="https://configit.com/solutions/clm/configuration-lifecycle-management-for-the-enterprise/" class="hover:underline text-gray-600" target="_blank"><h4>CONFIGIT A/S</h4></a>
-                                    <p class="text-gray-500 dark:text-gray-300">MAR 2023 - MAY 2024 | CHENNAI,INDIA</p>
-									<p class="font- italic text-gray-900 dark:text-white-200">Provided enterprise-level SaaS support, managing workflows, API integrations, and system architectures while collaborating with Product and Engineering teams to troubleshoot issues, optimize deployments, and enhance system performance, contributing to product improvements and sprint planning.</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-icon"></div>
-                        <div class="timeline-content bg-white dark:bg-gray-800 shadow-lg rounded-lg card-hover group relative">
-                            <div class="flex items-center mb-2">
-                                <img src="Images/Configit01.png" alt="Company Logo" class="w-25 h-11 mr-3">
-                                <div>
-                                    <h3 class="text-xl font-semibold dark:text-gray-200">PRODUCT SUPPORT ENGINEER</h3>
-                                    <a href="https://configit.com/solutions/clm/" class="hover:underline text-gray-600" target="_blank"><h4>CONFIGIT A/S</h4></a>
-                                    <p class="text-gray-500 dark:text-gray-300">FEB 2021 – FEB 2023 | CHENNAI,INDIA A/S</p>
-									<p class="font- italic text-gray-900 dark:text-white-200">Handled enterprise-level SaaS support, prioritized client issues, led triage meetings, collaborated with cross-functional teams, ensured server security in Azure through proactive monitoring, audits, and automation, and developed documentation to streamline communication and enhance coordination.</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-icon"></div>
-                        <div class="timeline-content bg-white dark:bg-gray-800 shadow-lg rounded-lg card-hover group relative">
-                            <div class="flex items-center mb-2">
-                                <img src="Images/FactSet01.png" alt="Company Logo" class="w-25 h-9 mr-3">
-                                <div>
-                                    <h3 class="text-xl font-semibold dark:text-gray-200">PRODUCT SPECIALIST</h3>
-                                    <a href="https://www.factset.com/our-company/values" class="hover:underline text-gray-600" target="_blank"><h4>FACTSET</h4></a>
-                                    <p class="text-gray-500 dark:text-gray-300">FEB 2020 – JAN 2021 | HYDERABAD,INDIA</p>
-									<p class="font- italic text-gray-900 dark:text-white-200">I provided technical mentorship, conducted training sessions to enhance team efficiency, managed global escalations, and coordinated issue resolution to minimize disruptions while proactively eliminating false alarms for seamless client workflows.</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-icon"></div>
-                        <div class="timeline-content bg-white dark:bg-gray-800 shadow-lg rounded-lg card-hover group relative">
-                            <div class="flex items-center mb-2">
-                                <img src="Images/FactSet01.png" alt="Company Logo" class="w-25 h-9 mr-3">
-                                <div>
-                                    <h3 class="text-xl font-semibold dark:text-gray-200">ASSOCIATE PRODUCT SPECIALIST</h3>
-                                    <a href="https://www.factset.com/our-company/values" class="hover:underline text-gray-600" target="_blank"><h4>FACTSET</h4></a>
-                                    <p class="text-gray-500 dark:text-gray-300">DEC 2018 – JAN 2020 | HYDERABAD,INDIA</p>
-									<p class="font- italic text-gray-900 dark:text-white-200">
-									I provided technical support for financial software, troubleshot issues, managed incidents, documented solutions, and collaborated with cross-functional teams to escalate complex concerns and enhance product usability.</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 bg-white-100 dark:bg-gray-900">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-8 dark:text-gray-200">PROJECTS</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 card-hover group relative">
-                        <img src="Images/vespera01.webp" alt="Project Image" class="project-image mb-4"><br>
-                        <h3 class="text-2xl font-semibold text-center dark:text-gray-200">Automated Home Beverage System</h3><br>
-                        <p class="font- italic text-gray-900 dark:text-white-200">Vespera is an academic project that comprehensively designs and implements a premium automated cocktail machine—from conceptualization to deployment—leveraging rigorous market analysis, targeted user research, and strategic problem-solving to address the challenges of inconsistent, time-consuming, and error-prone home cocktail preparation by using automation, AI-driven customization, and sophisticated design to deliver a seamless, luxurious cocktail experience in under two minutes.</p><br>
-                        <div class="text-center mt-auto">
-                            
-                            <a href="#" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-gray-900 hover:underline hidden group-hover:block">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 card-hover group relative">
-                        <img src="Images/retail01.png" alt="Project Image" class="project-image mb-4"><br>
-                        <h3 class="text-2xl font-semibold text-center dark:text-gray-200">Retail Analytics Dashboard</h3><br>
-                        <p class="font- italic text-gray-900 dark:text-white-200">Architected data warehouse for retail analytics by consolidating sales, customer and supplier data using Oracle SQL Server employing dimensional modeling and star schema. Established optimized ETL workflows using Talend to develop Tableau dashboards for real-time insights and decision-making, leading to targeted marketing campaigns which boosted sales by 20%.</p><br>
-                        <div class="text-center mt-auto">
-                            
-                            <a href="#" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-gray-900 hover:underline hidden group-hover:block">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 card-hover group relative">
-                        <img src="Images/quality01.png" alt="Project Image" class="project-image mb-4">
-                        <h3 class="text-2xl font-semibold text-center dark:text-gray-200">Quality of Life App Design</h3><br>
-                        <p class="font- italic text-gray-900 dark:text-white-200">The LiveSafe project addresses the challenge of insufficient, fragmented neighborhood data, complicating property decisions for tenants and landlords. By integrating real-time crime statistics and comprehensive quality-of-life metrics into a unified, cloud-based analytics platform, LiveSafe empowers users to make informed housing choices. This approach leverages advanced database design, agile methodologies, and predictive analytics to significantly enhance property management, community safety, and overall living standards.</p><br>
-                        <div class="text-center mt-auto">
-                            
-                            <a href="#" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-gray-900 hover:underline hidden group-hover:block">Learn More</a>
-                        </div>
-                    </div>
-					<div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 card-hover group relative">
-                        <img src="Images/ems01.jpg" alt="Project Image" class="project-image mb-4">
-                        <h3 class="text-2xl font-semibold text-center dark:text-gray-200">Event Management System</h3><br>
-                        <p class="font- italic text-gray-900 dark:text-white-200">The Event Management System (EMS), codenamed Nexus, transforms traditional event management by centralizing bookings, payments, and coordination into a scalable database system that streamlines processes, enhances stakeholder experiences, and positions Spotlight competitively in the US event booking market by boosting efficiency, personalizing user interactions, and driving revenue growth.</p><br>
-                        <div class="text-center mt-auto">
-                            
-                            <a href="#" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-gray-900 hover:underline hidden group-hover:block">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 card-hover group relative">
-                        <img src="Images/wps01.jpg" alt="Project Image" class="project-image mb-4">
-                        <h3 class="text-2xl font-semibold text-center dark:text-gray-200">Word Problem Solver</h3><br>
-                        <p class="font- italic text-gray-900 dark:text-white-200">Pioneered an AI-driven system in Python, leveraging IBM CPLEX and SVM with RBF kernel to preprocess multi-sentence 
-								algebra word problems, form 500+ equation tree sets, and rank them with 76% accuracy, slashing solution time by 35% 
-								through optimized Integer Linear Programming and discriminative local-global learning models trained on 540 problems</p><br>
-                        <div class="text-center mt-auto">
-                            
-                            <a href="#" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-gray-900 hover:underline hidden group-hover:block">Learn More</a>
-                        </div>
-                    </div>
-					<div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 card-hover group relative">
-                        <img src="Images/hms01.jpg" alt="Project Image" class="project-image mb-4">
-                        <h3 class="text-2xl font-semibold text-center dark:text-gray-200">Hostel Management System</h3><br>
-                        <p class="font- italic text-gray-900 dark:text-white-200">
-                           Developed a user-centric Hostel Management System using HTML, CSS, JSP, and PHP integrated with a MySQL database via JDBC on an XAMPP server, simplifying hostel administration with secure registration, room management, mess schedule access, notice review, room tracking, and fee payments, while providing an intuitive UI, real-time notifications, interactive dashboards, and precise analytics to enhance operational efficiency and student satisfaction.</p><br>
-                        <div class="text-center mt-auto">
-                            
-                            <a href="#" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-gray-900 hover:underline hidden group-hover:block">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Case Studies Section -->
-        <section id="case-studies" class="bg-gray-100 dark:bg-gray-800 py-20">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-8 dark:text-gray-200">CASE STUDIES</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				
-                    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 card-hover group relative">
-                        <img src="Images/cs1.png" alt="Project Image" class="project-image mb-4"><br>
-                        <h3 class="text-2xl font-semibold text-center dark:text-gray-200">Audit & IT Controls for Financial Reporting</h3><br>
-                        <p class="font- italic text-gray-900 dark:text-white-200">Smithsonian Banking Group faced critical security and compliance risks in its internet banking system, including weak access controls and inadequate fraud detection. I assessed infrastructure and financial applications, identifying vulnerabilities in the general ledger, receivables, payables, and licensing. I designed 20+ business rules to mitigate risks in site licensing, revenue processing, and digital sales, reducing compliance gaps by 35%. By strengthening governance through IT control evaluation and implementing a structured audit framework, we enhanced security, deployed SIEM for real-time threat detection, and ensured compliance, reducing security risks by 70% and improving system resilience by 35%.</p><br>
-                        <div class="text-center mt-auto">
-                           
-                            <a href="" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-gray-900 hover:underline hidden group-hover:block">Learn More</a>
-                        </div>
-                    </div>
-					
-                    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 card-hover group relative">
-                        <img src="Images/cs2.png" alt="Project Image" class="project-image mb-4"><br>
-                        <h3 class="text-2xl font-semibold text-center dark:text-gray-200">Major Manufacturing Case Using COBIT5</h3><br>
-                        <p class="font- italic text-gray-900 dark:text-white-200">Major Manufacturing faced governance risks, ERP security gaps, and audit independence issues, leading to compliance failures and fraud risks. Conducted a governance and IT risk assessment using COBIT 5, identifying weak board structures, ERP vulnerabilities, and conflicts of interest in audits. Recommended governance restructuring, ERP security enhancements (RBAC, MFA, audit trails), and independent audit functions to ensure compliance, transparency, and risk mitigation.</p><br>
-                        <div class="text-center mt-auto">
-                            
-                            <a href="#" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-gray-900 hover:underline hidden group-hover:block">Learn More</a>
-                        </div>
-                    </div>
-					
-                    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 card-hover group relative">
-                        <img src="Images/cs3.png" alt="Project Image" class="project-image mb-4">
-                        <h3 class="text-2xl font-semibold text-center dark:text-gray-200">Smithsonian Banking Group Case</h3><br>
-                        <p class="font- italic text-gray-900 dark:text-white-200">Smithsonian Banking Group’s internet banking system had security gaps, exposing it to cyber threats and compliance risks. I conducted a COBIT 5-aligned risk assessment, testing firewalls, MFA, and RBAC, along with penetration testing and audits. We then strengthened security controls, deployed SIEM for threat detection, and enforced compliance, reducing risks by 70% and improving resilience by 35%.</p><br>
-                        <div class="text-center mt-auto">
-                            
-                            <a href="#" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-gray-900 hover:underline hidden group-hover:block">Learn More</a>
-                        </div>
-                    </div>
-					
-                    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 card-hover group relative">
-                        <img src="Images/cs4.png" alt="Project Image" class="project-image mb-4">
-                        <h3 class="text-2xl font-semibold text-center dark:text-gray-200">Claim-proof Insurance (IT Audit Assurance)</h3><br>
-                        <p class="font- italic text-gray-900 dark:text-white-200">ClaimProof Insurance faced security risks in its program change control process, including unauthorized modifications, insecure OTP storage, and weak log reconciliation. To address this, I conducted an IT assurance audit using the COBIT 5 framework, assessed control effectiveness, and performed log audits and access simulations. Based on the findings, we implemented secure OTP storage, automated log reconciliation, and structured change management policies, reducing unauthorized changes by 40% and achieving 100% audit compliance.</p><br>
-                        <div class="text-center mt-auto">
-                            
-                            <a href="#" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-gray-900 hover:underline hidden group-hover:block">Learn More</a>
-                        </div>
-                    </div>
-					
-                    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 card-hover group relative">
-                        <img src="Images/cs5.png" alt="Project Image" class="project-image mb-4">
-                        <h3 class="text-2xl font-semibold text-center dark:text-gray-200">Upward Round Airlines (Information Security)</h3><br>
-                        <p class="font- italic text-gray-900 dark:text-white-200">Upward Bound Airlines faced security, compliance, and operational risks during its cloud migration, worsened by IT staff cuts and outdated infrastructure. I performed a COBIT 5-aligned risk assessment, identifying key vulnerabilities and designing controls to address cloud-specific risks. We implemented cloud-native security measures, strengthened endpoint security, and ensured regulatory compliance, improving risk mitigation by 60% and boosting operational resilience.</p><br>
-                        <div class="text-center mt-auto">
-                            
-                            <a href="#" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-gray-900 hover:underline hidden group-hover:block">Learn More</a>
-                        </div>
-                    </div>
-					
-					<div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 card-hover group relative">
-                        <img src="Images/ec01.png" alt="Project Image" class="project-image mb-4">
-                        <h3 class="text-2xl font-semibold text-center dark:text-gray-200">Enhancing Cybersecurity Defensive Controls Using AI</h3><br>
-                        <p class="font- italic text-gray-900 dark:text-white-200">Modern cyber threats, like adversarial malware and AI-driven phishing, were outpacing traditional defenses, leading to slow breach detection and high false-positive rates. I researched and integrated AI technologies such as machine learning, reinforcement learning, and NLP to enhance real-time detection, automate responses, and predict emerging threats. The solution reduced breach detection time by 90%, improved response accuracy, and strengthened defenses against evolving attacks.</p><br>
-                        <div class="text-center mt-auto">
-                            
-                            <a href="#" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-gray-900 hover:underline hidden group-hover:block">Learn More</a>
-                        </div>
-                    </div>
-					
-					
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 bg-white-100 dark:bg-gray-900">
-            <div class="container mx-auto" >
-                <h2 class="text-4xl font-bold text-center mb-8">SKILLS</h2>
-                <div class="space-y-12">
-                    <!-- Product Management -->
-                    <div>
-                        <h3 class="text-2xl font-semibold text-center mb-4 dark:text-gray-200">Product Management</h3>
-                        <div class="flex flex-wrap justify-center gap-4 ">
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/Sprint01.png" alt="Skill"class="skill-icon mx-auto mb-2" ><h3 class="font-bold">Sprint Planning</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/ur02.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">User Research</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/mr01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">Market Research</h3><h3 class="font-bold"> & Analysis</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/cd01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">Content Development</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/td01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">Technical Documentation</h3></div>
-                        </div>
-                    </div>
-                    <!-- Data Analytics -->
-                    <div>
-                        <h3 class="text-2xl font-semibold text-center mb-4 dark:text-gray-200">Data Analytics</h3>
-                        <div class="flex flex-wrap justify-center gap-4">
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/py01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">Python</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><i class="fas fa-database text-5xl text-green-500 mb-4"></i><h3 class="font-bold">SQL</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/tb01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">Tableau</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/da01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">Data Analysis</h3></div>
-                        </div>
-                    </div>
-					
-					<!-- Web Development -->
-					
-					<h3 class="text-2xl font-semibold text-center mb-4 dark:text-gray-200">Web Development</h3>
-                        <div class="flex flex-wrap justify-center gap-4">
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/html01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">HTML</h3></div>
-							<div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/css01.jpg" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">CSS</h3></div>
-							<div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/jsp01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">JavaScript</h3></div>
-                        </div>
-                    </div><br>
-                    <!-- Tools -->
-                    <div>
-                        <h3 class="text-2xl font-semibold text-center mb-4 dark:text-gray-200">Tools</h3>
-                        <div class="flex flex-wrap justify-center gap-4">
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/aws.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">AWS</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/az01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">Azure</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><i class="fab fa-salesforce text-5xl text-blue-500 mb-4"></i><h3 class="font-bold">Salesforce</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/Jira01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">JIRA</h3></div>
-							<div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/Confluence01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">Confluence</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/git01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">Git</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/github01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">GitHub</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/sap01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">SAP</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/snowflake01.jpg" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">Snowflake</h3></div>
-                            <div class="bg-white shadow-md rounded p-6 w-30 text-center card-hover group relative"><img src="Images/kafka01.png" alt="Skill" class="skill-icon mx-auto mb-2"><h3 class="font-bold">Kafka</h3></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-		
-		
-		
-        <section id="certifications" class="py-20 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200"> 
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-8">CERTIFICATIONS</h2>
-                <div class="text-center mt-auto">
-                    <a href="https://www.credly.com/users/vijay-kumar-banoth" class="bg-blue-800 text-white text-xl py-3 px-8 rounded hover:bg-blue-700 transition duration-300" target="_blank" rel="noopener noreferrer">Credly Profile</a>
-                </div><br><br>
-				<div class="flex flex-wrap justify-center gap-6">
-   
-				
-                <div class="flex flex-wrap justify-center space-x-4">
-                    
-                    <div class="mb-4 rounded-lg shadow-m card-hover group relative"><a href="" target="_blank"><img src="Images/CSPO01.jpg" alt="Certification 2" class="w-50 h-50 max-w-xl"></a></div>
-                    <div class="mb-4 rounded-lg shadow-m card-hover group relative"><a href="" target="_blank"><img src="Images/LSSGB01.jpg" alt="Certification 2" class="w-50 h-50 max-w-xl "></a></div>
-					<div class="mb-4 rounded-lg shadow-m card-hover group relative"><a href="" target="_blank"><img src="Images/ITIL01.jpg" alt="Certification 1" class="w-50 h-50 max-w-xl"></a></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="py-20 bg-white dark:bg-gray-800">
-            <div class="container mx-auto flex flex-col md:flex-row">
-                <div class="w-1/3 pr-8">
-                    <h2 class="text-4xl font-bold mb-8">EDUCATION</h2>
-                </div>
-                <div class="w-2/3 relative timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-icon-education"></div>
-                        <div class="timeline-content bg-white dark:bg-gray-800 shadow-lg rounded-lg card-hover group relative">
-                            <div class="flex items-center mb-2">
-                                <img src="Images/SOM01.png" alt="Company Logo" class="w-25 h-6 mr-3">
-                                <div>
-                                    <h3 class="text-xl font-semibold dark:text-gray-200">Master of Science, Management Information Systems (STEM)</h3>
-                                    <a href="https://management.buffalo.edu/degree-programs/master-of-science-ms/information-systems.html" class="hover:underline text-gray-600 dark:text-gray-400" target="_blank"><h4>University at Buffalo, New York</h4></a>
-                                    <p class="text-gray-500 dark:text-gray-300">Jun 2024 - Jun 2025 · United States</p>
-									 <p class="font- italic text-gray-900 dark:text-white-200">Relevant Courses: Cloud Data Warehousing, System Design and Analysis, DBMS, Predictive Analytics, IS Auditing, Applied AI.</p>
-                                </div>
-                            </div>
-                           
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-icon-education"></div>
-                        <div class="timeline-content bg-white dark:bg-gray-800 shadow-lg rounded-lg card-hover group relative">
-                            <div class="flex items-center mb-2">
-                                <img src="Images/MNIT01.png" alt="University Logo" class="w-33 h-40 mr-3">
-                                <div>
-                                    <h3 class="text-xl font-semibold dark:text-gray-200">Bachelor of Technology, Computer Science and Engineering</h3>
-                                    <a href="https://www.mnit.ac.in/about_us/mandv" class="hover:underline text-gray-600 dark:text-gray-400" target="_blank"><h4>Malaviya National Institute Of Technology, Jaipur</h4></a>
-                                    <p class="text-gray-500 dark:text-gray-300">Jul 2014 - May 2018 · India</p>
-									<p class="font- italic text-gray-900 dark:text-white-200">Coursework: Data Structures and Algorithms, Cloud Computing, Artificial Intelligence, Operating Systems, Object-Oriented Analysis and Design, Database Management Systems, Computer Architecture, Object-Oriented Programming, Computer Networks and Security.</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Me Section -->
-        <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-600 text-grey-600 dark:text-gray-200">
-    <div class="container mx-auto text-center">
-        <h2 class="text-5xl font-bold mb-6">Let's Connect & Build Great Products Together!</h2>
-        <p class="text-blue-400-lg mb-8">I'm always interested in discussing product strategy, innovation, and how to deliver value to users. Let's connect!</p>
         
-        <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-10">
-            <a href="https://www.linkedin.com/in/vijaykumar353/" target="_blank" rel="noopener noreferrer" 
-               class="bg-white dark:bg-gray-800 text-bold-blue-400 dark:text-white-300 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
-                <i class="fab fa-linkedin text-blue-600 dark:text-blue-300 text-2xl mr-2"></i> Connect on LinkedIn
-            </a>
+        <!-- About Section -->
+       
+	  <section id="about" class="py-20 bg-[var(--background)] dark:bg-[var(--dark-background)]">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center">
+      <!-- Left Column: Description, Tags, Key Facts & Contact -->
+      <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+        <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+          <i class="fas fa-user mr-2"></i> About Me
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+          I'm a passionate product thinker with 6 years of experience blending business strategy, design, and audit assurance. My work focuses on turning complex challenges into scalable, user-centered solutions.
+        </p>
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+          With certifications in CSPO®, LSSGB, and ITIL 4, I bridge technical depth with strategic goals—whether it's shaping product roadmaps, optimizing compliance, or enhancing operational efficiency.
+        </p>
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+          I thrive in cross-functional teams, enjoy aligning user insights with business impact, and bring a strong foundation in tools like Salesforce, SAP, and Azure Cloud to drive measurable results.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Product Strategy</span>
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">UX Research</span>
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Prototyping</span>
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Agile Methodology</span>
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Team Leadership</span>
+        </div>
+
+        <!-- Key Facts -->
+        <div class="key-facts mt-8 flex flex-wrap gap-6">
+          <div class="fact text-center">
+            <span class="fact-number text-2xl font-bold text-blue-600">5+</span>
+            <span class="fact-label text-sm text-gray-600">Years Experience</span>
+          </div>
+          <div class="fact text-center">
+            <span class="fact-number text-2xl font-bold text-blue-600">10+</span>
+            <span class="fact-label text-sm text-gray-600">Academic Projects Completed</span>
+          </div>
+          <div class="fact text-center">
+            <span class="fact-number text-2xl font-bold text-blue-600">15+</span>
+            <span class="fact-label text-sm text-gray-600">Happy Clients</span>
+          </div>
+        </div>
+        <!-- Contact Me Button, Center Aligned -->
+        <div class="mt-4 text-center">
+          <a href="#contact" class="btn btn-primary inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors">
+            Contact Me
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Core Competencies & Optimized Cards -->
+      <div class="md:w-1/2 md:pl-10" data-aos="fade-left">
+        <!-- Core Competencies -->
+        <div class="about-skills mb-8">
+          <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Core Competencies</h3>
+          <div class="skill-bars space-y-4">
+            <div class="skill">
+              <div class="skill-info flex justify-between mb-1">
+                <span class="skill-name text-gray-700 dark:text-gray-300">Product Strategy</span>
+                <span class="skill-percentage text-gray-700 dark:text-gray-300">90%</span>
+              </div>
+              <div class="skill-bar bg-gray-300 dark:bg-gray-600 rounded h-2">
+                <div class="skill-progress bg-blue-600 h-2 rounded" style="width: 90%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-info flex justify-between mb-1">
+                <span class="skill-name text-gray-700 dark:text-gray-300">UX Design</span>
+                <span class="skill-percentage text-gray-700 dark:text-gray-300">85%</span>
+              </div>
+              <div class="skill-bar bg-gray-300 dark:bg-gray-600 rounded h-2">
+                <div class="skill-progress bg-blue-600 h-2 rounded" style="width: 85%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-info flex justify-between mb-1">
+                <span class="skill-name text-gray-700 dark:text-gray-300">User Research</span>
+                <span class="skill-percentage text-gray-700 dark:text-gray-300">80%</span>
+              </div>
+              <div class="skill-bar bg-gray-300 dark:bg-gray-600 rounded h-2">
+                <div class="skill-progress bg-blue-600 h-2 rounded" style="width: 80%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-info flex justify-between mb-1">
+                <span class="skill-name text-gray-700 dark:text-gray-300">Development</span>
+                <span class="skill-percentage text-gray-700 dark:text-gray-300">75%</span>
+              </div>
+              <div class="skill-bar bg-gray-300 dark:bg-gray-600 rounded h-2">
+                <div class="skill-progress bg-blue-600 h-2 rounded" style="width: 75%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optimized Cards Section -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg shadow-md card-hover">
+            <div class="text-blue-600 dark:text-blue-400 mb-3">
+              <i class="fas fa-lightbulb fa-2x"></i>
+            </div>
+            <h3 class="text-lg font-semibold mb-1 text-gray-900 dark:text-white">Problem Solver</h3>
+            <p class="text-gray-700 dark:text-gray-300 text-sm">
+              I thrive on tackling complex challenges and finding innovative solutions.
+            </p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg shadow-md card-hover">
+            <div class="text-blue-600 dark:text-blue-400 mb-3">
+              <i class="fas fa-users fa-2x"></i>
+            </div>
+            <h3 class="text-lg font-semibold mb-1 text-gray-900 dark:text-white">User Advocate</h3>
+            <p class="text-gray-700 dark:text-gray-300 text-sm">
+              I put users at the center of every decision and design process.
+            </p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg shadow-md card-hover">
+            <div class="text-blue-600 dark:text-blue-400 mb-3">
+              <i class="fas fa-chart-line fa-2x"></i>
+            </div>
+            <h3 class="text-lg font-semibold mb-1 text-gray-900 dark:text-white">Data-Driven</h3>
+            <p class="text-gray-700 dark:text-gray-300 text-sm">
+              I leverage analytics and user feedback to make informed decisions.
+            </p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg shadow-md card-hover">
+            <div class="text-blue-600 dark:text-blue-400 mb-3">
+              <i class="fas fa-rocket fa-2x"></i>
+            </div>
+            <h3 class="text-lg font-semibold mb-1 text-gray-900 dark:text-white">Strategic Thinker</h3>
+            <p class="text-gray-700 dark:text-gray-300 text-sm">
+              I align product initiatives with business goals and market opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        
+        <!-- Experience Section with Timeline -->
+   <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-800">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-12 text-center experience-heading" data-aos="fade-up">
+      <i class="fas fa-briefcase mr-2"></i> Professional Experience
+    </h2>
+
+    <div class="relative timeline pl-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+
+      <!-- Timeline Item 1 -->
+      <div class="timeline-item">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-dynamic">Product Management Intern</h3>
+            <span class="text-sm font-medium experience-date py-1 px-2 rounded">Jan 2025 – Present</span>
+          </div>
+          <h4 class="text-lg font-medium text-dynamic mb-2">
+            <a href="https://www.habitat.org/us-ny/buffalo/hfh-buffalo" target="_blank" rel="noopener noreferrer" class="hover:underline text-dynamic">HFHB - Project Clinic</a>
+          </h4>
+          <p class="text-dynamic mb-4">
+            Streamlined homebuyer program processes by designing workflow maps, optimizing applicant tracking, and developing user-friendly pre-screening forms while collaborating with teams to enhance guidelines and financial literacy resources.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 2 -->
+      <div class="timeline-item">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-dynamic">Product Management Intern</h3>
+            <span class="text-sm font-medium experience-date py-1 px-2 rounded">Jan 2025 – Present</span>
+          </div>
+          <h4 class="text-lg font-medium text-dynamic mb-2">
+            <a href="https://thedoze.co/" target="_blank" rel="noopener noreferrer" class="hover:underline text-dynamic">Doze - Project Clinic</a>
+          </h4>
+          <p class="text-dynamic mb-4">
+            Conducted market analysis, developed product strategies by identifying key customer segments, creating detailed personas and roadmaps, executed marketing initiatives, collaborated with influencers, and refined pricing strategies.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 3 -->
+      <div class="timeline-item">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-dynamic">Product Management Intern</h3>
+            <span class="text-sm font-medium experience-date py-1 px-2 rounded">Jan 2025 – Present</span>
+          </div>
+          <h4 class="text-lg font-medium text-dynamic mb-2">
+            <a href="https://www.sanahealthandwellness.com/about" target="_blank" rel="noopener noreferrer" class="hover:underline text-dynamic">Sana - Project Clinic</a>
+          </h4>
+          <p class="text-dynamic mb-4">
+            Enhanced marketing strategies, created promotional materials, and optimized the website’s structure, content, and navigation to improve user experience and streamline client interactions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 4 -->
+      <div class="timeline-item">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-dynamic">Teaching Assistant</h3>
+            <span class="text-sm font-medium experience-date py-1 px-2 rounded">Aug 2024 – Dec 2024</span>
+          </div>
+          <h4 class="text-lg font-medium text-dynamic mb-2">
+            <a href="https://management.buffalo.edu/about/mission-vision/innovation-entrepreneurship-leadership.html" target="_blank" rel="noopener noreferrer" class="hover:underline text-dynamic">Corporate Social Responsibility, University at Buffalo</a>
+          </h4>
+          <p class="text-dynamic mb-4">
+            Graded assignments for 385+ students, conducted research on corporate ethics and crisis management to develop curriculum materials, and co-facilitated classes and panel discussions, providing feedback to enhance student learning.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 5 -->
+      <div class="timeline-item">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-dynamic">Senior Solution Support Engineer</h3>
+            <span class="text-sm font-medium experience-date py-1 px-2 rounded">Mar 2023 – May 2024</span>
+          </div>
+          <h4 class="text-lg font-medium text-dynamic mb-2">
+            <a href="https://configit.com/solutions/clm/configuration-lifecycle-management-for-the-enterprise/" target="_blank" rel="noopener noreferrer" class="hover:underline text-dynamic">Configit A/S, India</a>
+          </h4>
+          <p class="text-dynamic mb-4">
+            Provided enterprise-level SaaS support, managing workflows, API integrations, and system architectures while collaborating with Product and Engineering teams to troubleshoot issues and enhance deployments.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 6 -->
+      <div class="timeline-item">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-dynamic">Product Support Engineer</h3>
+            <span class="text-sm font-medium experience-date py-1 px-2 rounded">Feb 2021 – Feb 2023</span>
+          </div>
+          <h4 class="text-lg font-medium text-dynamic mb-2">
+            <a href="https://configit.com/solutions/clm/" target="_blank" rel="noopener noreferrer" class="hover:underline text-dynamic">Configit A/S, India</a>
+          </h4>
+          <p class="text-dynamic mb-4">
+            Handled enterprise-level SaaS support, led triage meetings, collaborated cross-functionally, ensured Azure security through monitoring and automation, and maintained documentation for better coordination.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 7 -->
+      <div class="timeline-item">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-dynamic">Product Specialist</h3>
+            <span class="text-sm font-medium experience-date py-1 px-2 rounded">Feb 2020 – Jan 2021</span>
+          </div>
+          <h4 class="text-lg font-medium text-dynamic mb-2">
+            <a href="https://www.factset.com/our-company/values" target="_blank" rel="noopener noreferrer" class="hover:underline text-dynamic">FactSet, India</a>
+          </h4>
+          <p class="text-dynamic mb-4">
+            Provided technical mentorship, conducted training sessions, managed escalations, resolved issues globally, and ensured smooth workflows by reducing false alarms.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 8 -->
+      <div class="timeline-item">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-dynamic">Associate Product Specialist</h3>
+            <span class="text-sm font-medium experience-date py-1 px-2 rounded">Dec 2018 – Jan 2020</span>
+          </div>
+          <h4 class="text-lg font-medium text-dynamic mb-2">
+            <a href="https://www.factset.com/our-company/values" target="_blank" rel="noopener noreferrer" class="hover:underline text-dynamic">FactSet, India</a>
+          </h4>
+          <p class="text-dynamic mb-4">
+            Provided technical support for financial software, troubleshot issues, managed incidents, documented solutions, and collaborated across teams to enhance usability.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+		
+	<!-- Projects Section -->
+
+<section id="projects" class="py-20 bg-[var(--background)] dark:bg-[var(--dark-background)]">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white" data-aos="fade-up">
+           <i class="fas fa-project-diagram mr-2"></i> Featured Projects
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            A collection of my most significant work across product management, UI/UX design, and development.
+        </p>
+        
+        <!-- Project Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="200">
+            <button class="project-filter active px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="all">
+                All Projects
+            </button>
+            <button class="project-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="product">
+                Product Management
+            </button>
+            <button class="project-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="ux">
+                UX Design
+            </button>
+            <button class="project-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="development">
+                Development
+            </button>
+        </div>
+        
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card 1: Automated Home Beverage System -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="product ux" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="Images/vespera01.webp" alt="Automated Home Beverage System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-blue-600 text-white text-xs rounded">Product</span>
+                                <span class="px-2 py-1 bg-blue-600 text-white text-xs rounded">UX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Automated Home Beverage System</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        Vespera designs and implements a premium automated cocktail machine for a luxurious experience.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
             
-            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/vbanoth-buffalo/30min'}); return false;" 
-               class="bg-white dark:bg-gray-800 text-bold-blue-400 dark:text-white-300 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
-                <i class="fas fa-calendar-alt text-blue-600 dark:text-blue-300 text-2xl mr-2"></i> Schedule a Call
-            </a>
+            <!-- Project Card 2: Retail Analytics Dashboard -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="Images/retail01.png" alt="Retail Analytics Dashboard" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Retail Analytics Dashboard</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        Architected a data warehouse with optimized ETL workflows to create real-time dashboards that boosted sales.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
             
-            <a href="mailto:banothvijaykumar01@gmail.com" 
-               class="bg-white dark:bg-gray-800 text-bold-blue-400 dark:text-blue-300 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
-                <i class="fas fa-envelope text-blue-600 dark:text-blue-300 text-2xl mr-2"></i> Email Me
-            </a>
+            <!-- Project Card 3: Quality of Life App Design -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="ux" data-aos="fade-up" data-aos-delay="300">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="Images/quality01.png" alt="Quality of Life App Design" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-blue-600 text-white text-xs rounded">UX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Quality of Life App Design</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        LiveSafe integrates real-time crime stats with quality-of-life metrics in a unified platform.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 4: Event Management System -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development" data-aos="fade-up" data-aos-delay="400">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="Images/ems01.jpg" alt="Event Management System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Event Management System</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        Nexus centralizes bookings, payments, and coordination into a scalable system that streamlines event management.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 5: Word Problem Solver -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development" data-aos="fade-up" data-aos-delay="500">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="Images/wps01.jpg" alt="Word Problem Solver" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Word Problem Solver</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        An AI-driven system using IBM CPLEX and SVM to solve algebra word problems, reducing solution time by 35%.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 6: Hostel Management System -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development" data-aos="fade-up" data-aos-delay="600">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="Images/hms01.jpg" alt="Hostel Management System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Hostel Management System</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        A system built with HTML, CSS, JSP, PHP, and MySQL that simplifies hostel administration with secure registration and real-time notifications.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 
-</main>
+
+
+<!-- Case Studies -->
+
+
+<section id="case-studies" class="py-20 bg-gray-50 dark:bg-gray-800">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white" data-aos="fade-up">
+      <i class="fas fa-book mr-2"></i>Case Studies
+    </h2>
+    <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      In-depth explorations of my problem-solving process and approach to audit challenges.
+    </p>
+    
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="150">
+      <button class="case-filter active px-6 py-2 bg-blue-600 text-white rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="all">
+        All Case Studies
+      </button>
+      <button class="case-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="audit-assurance">
+        Audit Assurance
+      </button>
+      <button class="case-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="governance-risk">
+        Governance & Risk
+      </button>
+      <button class="case-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="risk-assessment">
+        Risk Assessment
+      </button>
+      <button class="case-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="it-assurance">
+        IT Assurance
+      </button>
+      <button class="case-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="information-security">
+        Information Security
+      </button>
+      <button class="case-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="cybersecurity">
+        Cybersecurity
+      </button>
+    </div>
+    
+    <!-- Case Studies Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      
+      <!-- Case Study 1 -->
+      <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="audit-assurance" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative">
+          <img src="Images/cs1.png" alt="Audit & IT Controls for Financial Reporting" class="w-full h-64 object-cover">
+          <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+            Audit Assurance
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+            Audit & IT Controls for Financial Reporting
+          </h3>
+          <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
+            Smithsonian Banking Group faced critical security and compliance risks in its internet banking system. I assessed vulnerabilities across financial applications and designed 20+ business rules that reduced compliance gaps by 35% and security risks by 70%.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">IT Controls</span>
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Compliance</span>
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Fraud Prevention</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case Study 2 -->
+      <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="governance-risk" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative">
+          <img src="Images/cs2.png" alt="Major Manufacturing Case Using COBIT5" class="w-full h-64 object-cover">
+          <div class="absolute top-4 right-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+            Governance & Risk
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+            Major Manufacturing Case Using COBIT5
+          </h3>
+          <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
+            Major Manufacturing faced governance risks, ERP security gaps, and audit independence issues. I conducted a COBIT 5–aligned risk assessment to identify vulnerabilities and recommended restructuring and security enhancements.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">COBIT5</span>
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Governance</span>
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">ERP Security</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case Study 3 -->
+      <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="risk-assessment" data-aos="fade-up" data-aos-delay="400">
+        <div class="relative">
+          <img src="Images/cs3.png" alt="Smithsonian Banking Group Case" class="w-full h-64 object-cover">
+          <div class="absolute top-4 right-4 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+            Risk Assessment
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+            Smithsonian Banking Group Case
+          </h3>
+          <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
+            The internet banking system at Smithsonian Banking Group had significant security gaps. Using a COBIT 5–aligned risk assessment, I strengthened security controls and deployed SIEM for real-time threat detection, reducing risks by 70%.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Risk Assessment</span>
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">SIEM</span>
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Cybersecurity</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case Study 4 -->
+      <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="it-assurance" data-aos="fade-up" data-aos-delay="500">
+        <div class="relative">
+          <img src="Images/cs4.png" alt="Claim-proof Insurance (IT Audit Assurance)" class="w-full h-64 object-cover">
+          <div class="absolute top-4 right-4 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+            IT Assurance
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+            Claim-proof Insurance (IT Audit Assurance)
+          </h3>
+          <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
+            ClaimProof Insurance faced security risks in its change control process. An IT assurance audit using COBIT 5 led to the implementation of secure OTP storage, automated log reconciliation, and structured change management—reducing unauthorized changes by 40%.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">IT Audit</span>
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Log Audits</span>
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Change Management</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case Study 5 -->
+      <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="information-security" data-aos="fade-up" data-aos-delay="600">
+        <div class="relative">
+          <img src="Images/cs5.png" alt="Upward Round Airlines (Information Security)" class="w-full h-64 object-cover">
+          <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+            Information Security
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+            Upward Round Airlines (Information Security)
+          </h3>
+          <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
+            During its cloud migration, Upward Bound Airlines faced security, compliance, and operational risks. A COBIT 5–aligned risk assessment led to the implementation of cloud-native security measures that improved risk mitigation by 60%.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Cloud Security</span>
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Risk Mitigation</span>
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Operational Resilience</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case Study 6 -->
+      <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="cybersecurity" data-aos="fade-up" data-aos-delay="700">
+        <div class="relative">
+          <img src="Images/ec01.png" alt="Enhancing Cybersecurity Defensive Controls Using AI" class="w-full h-64 object-cover">
+          <div class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+            Cybersecurity
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+            Enhancing Cybersecurity Defensive Controls Using AI
+          </h3>
+          <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
+            Modern cyber threats were outpacing traditional defenses. By integrating machine learning, reinforcement learning, and NLP, I enhanced real-time threat detection and automated responses—reducing breach detection time by 90%.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">AI</span>
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Threat Detection</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+ 
+		
+		
+		<!--- Skills -->
+		
+  
+<section id="skills" class="py-20 bg-[var(--background)] dark:bg-[var(--dark-background)]">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-8 dark:text-white">
+      <i class="fas fa-tools mr-2"></i>SKILLS
+    </h2>
+    
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="150">
+      <button class="skill-filter active px-6 py-2 bg-blue-600 text-white rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="all">
+        All Skills
+      </button>
+      <button class="skill-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="product-management">
+        Product Management
+      </button>
+      <button class="skill-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="data-analytics">
+        Data Analytics
+      </button>
+      <button class="skill-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="web-development">
+        Web Development
+      </button>
+      <button class="skill-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="tools">
+        Tools
+      </button>
+    </div>
+    
+    <!-- Skills Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+      
+      <!-- Product Management -->
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="product-management" data-aos="fade-up" data-aos-delay="200">
+        <img src="Images/Sprint01.png" alt="Sprint Planning" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">Sprint Planning</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="product-management" data-aos="fade-up" data-aos-delay="250">
+        <img src="Images/ur02.png" alt="User Research" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">User Research</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="product-management" data-aos="fade-up" data-aos-delay="300">
+        <img src="Images/mr01.png" alt="Market Research & Analysis" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">Market Research & Analysis</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="product-management" data-aos="fade-up" data-aos-delay="350">
+        <img src="Images/cd01.png" alt="Content Development" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">Content Development</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="product-management" data-aos="fade-up" data-aos-delay="400">
+        <img src="Images/td01.png" alt="Technical Documentation" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">Tech Documentation</h3>
+      </div>
+      
+      <!-- Data Analytics -->
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="data-analytics" data-aos="fade-up" data-aos-delay="200">
+        <img src="Images/py01.png" alt="Python" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">Python</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="data-analytics" data-aos="fade-up" data-aos-delay="250">
+        <i class="fas fa-database text-4xl text-green-500 mb-3 mx-auto"></i>
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">SQL</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="data-analytics" data-aos="fade-up" data-aos-delay="300">
+        <img src="Images/tb01.png" alt="Tableau" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">Tableau</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="data-analytics" data-aos="fade-up" data-aos-delay="350">
+        <img src="Images/da01.png" alt="Data Analysis" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">Data Analysis</h3>
+      </div>
+      
+      <!-- Web Development -->
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="web-development" data-aos="fade-up" data-aos-delay="200">
+        <img src="Images/html01.png" alt="HTML" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">HTML</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="web-development" data-aos="fade-up" data-aos-delay="250">
+        <img src="Images/css01.jpg" alt="CSS" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">CSS</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="web-development" data-aos="fade-up" data-aos-delay="300">
+        <img src="Images/jsp01.png" alt="JavaScript" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">JavaScript</h3>
+      </div>
+      
+      <!-- Tools -->
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="tools" data-aos="fade-up" data-aos-delay="200">
+        <img src="Images/aws.png" alt="AWS" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">AWS</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="tools" data-aos="fade-up" data-aos-delay="250">
+        <img src="Images/az01.png" alt="Azure" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">Azure</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="tools" data-aos="fade-up" data-aos-delay="300">
+        <i class="fab fa-salesforce text-4xl text-blue-500 mb-3 mx-auto"></i>
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">Salesforce</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="tools" data-aos="fade-up" data-aos-delay="350">
+        <img src="Images/Jira01.png" alt="JIRA" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">JIRA</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="tools" data-aos="fade-up" data-aos-delay="400">
+        <img src="Images/Confluence01.png" alt="Confluence" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">Confluence</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="tools" data-aos="fade-up" data-aos-delay="450">
+        <img src="Images/git01.png" alt="Git" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">Git</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="tools" data-aos="fade-up" data-aos-delay="500">
+        <img src="Images/github01.png" alt="GitHub" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">GitHub</h3>
+      </div>
+      <div class="skill-card bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center card-hover group" data-category="tools" data-aos="fade-up" data-aos-delay="550">
+        <img src="Images/sap01.png" alt="SAP" class="mx-auto mb-3 w-16 h-16">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-200 text-sm">SAP</h3>
+      </div>
+      
+    </div>
+  </div>
+</section>
+		
+       <!--- Certifications -->
+	   
+	
+<section id="certifications" class="py-20 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-8"><i class="fas fa-certificate mr-2"></i>CERTIFICATIONS</h2>
+    <div class="text-center mb-12">
+      <a href="https://www.credly.com/users/vijay-kumar-banoth" class="bg-blue-800 text-white text-xl py-3 px-8 rounded hover:bg-blue-700 transition duration-300" target="_blank" rel="noopener noreferrer">
+        Credly Profile
+      </a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <!-- Certification Card 1 -->
+      <div class="cert-card relative rounded-lg overflow-hidden shadow-lg card-hover group">
+        <img src="Images/CSPO01.jpg" alt="CSPO Certification" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center">
+          <a href="#" class="view-cert text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition duration-300">
+            View Certification
+          </a>
+        </div>
+      </div>
+      <!-- Certification Card 2 -->
+      <div class="cert-card relative rounded-lg overflow-hidden shadow-lg card-hover group">
+        <img src="Images/LSSGB01.jpg" alt="LSSGB Certification" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center">
+          <a href="#" class="view-cert text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition duration-300">
+            View Certification
+          </a>
+        </div>
+      </div>
+      <!-- Certification Card 3 -->
+      <div class="cert-card relative rounded-lg overflow-hidden shadow-lg card-hover group">
+        <img src="Images/ITIL01.jpg" alt="ITIL Certification" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center">
+          <a href="#" class="view-cert text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition duration-300">
+            View Certification
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Full-Size Certification Image -->
+<div id="cert-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 hidden z-50">
+  <div class="relative">
+    <img id="cert-modal-img" src="" alt="Full Size Certification" class="max-w-full max-h-screen">
+    <!-- Transparent close button -->
+    <button id="cert-modal-close" class="absolute top-2 right-2 text-white text-3xl font-bold bg-transparent opacity-70 hover:opacity-100">&times;</button>
+  </div>
+</div>
+
+
+	   
+	   
+	   
+ 
+		<!-- Education Section -->
+		
+		<section id="education" class="py-20 bg-gray-50 dark:bg-gray-800">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-12 text-center education-heading" data-aos="fade-up">
+      <i class="fas fa-graduation-cap mr-2"></i> Education
+    </h2>
+
+    <div class="relative timeline timeline-education pl-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+
+      <!-- Education Item 1 -->
+      <div class="timeline-item">
+        <div class="timeline-icon timeline-icon-education"></div>
+        <div class="timeline-content">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-dynamic">Master of Science, Management Information Systems (STEM)</h3>
+            <span class="text-sm font-medium experience-date py-1 px-2 rounded whitespace-nowrap">June 2025 </span>
+          </div>
+          <h4 class="text-lg font-medium text-dynamic mb-2">
+  <a href="https://management.buffalo.edu/degree-programs/master-of-science-ms/information-systems.html" target="_blank" rel="noopener noreferrer" class="hover:underline text-dynamic">
+    University at Buffalo, New York
+  </a>
+</h4>
+          <p class="text-dynamic mb-4">
+            Relevant Courses: Cloud Data Warehousing, System Design and Analysis, DBMS, Predictive Analytics, IS Auditing, Applied AI.
+          </p>
+        </div>
+      </div>
+
+      <!-- Education Item 2 -->
+      <div class="timeline-item">
+        <div class="timeline-icon timeline-icon-education"></div>
+        <div class="timeline-content">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-dynamic">Bachelor of Technology, Computer Science and Engineering</h3>
+            <span class="text-sm font-medium experience-date py-1 px-2 rounded whitespace-nowrap">May 2018 </span>
+          </div>
+          <h4 class="text-lg font-medium text-dynamic mb-2">
+  <a href="https://www.mnit.ac.in/about_us/mandv" target="_blank" rel="noopener noreferrer" class="hover:underline text-dynamic">
+    Malaviya National Institute Of Technology, Jaipur
+  </a>
+</h4>
+          <p class="text-dynamic mb-4">
+            Coursework: Data Structures and Algorithms, Cloud Computing, Artificial Intelligence, Operating Systems, Object-Oriented Analysis and Design, Database Management Systems, Computer Architecture, Object-Oriented Programming, Computer Networks and Security.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+		
+        
+        <!-- Contact Section -->
+<section id="contact" class="py-20 bg-[var(--background)] dark:bg-[var(--dark-background)]">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white" data-aos="fade-up">
+      <i class="fas fa-envelope mr-2"></i>Get In Touch
+    </h2>
+    <p class="text-xl text-gray-600 dark:text-gray-400 text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      I'm always interested in discussing product strategy, innovation, and how to deliver value to users. Let's connect!
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+      
+      <!-- Left Column: Contact Information & Creative Callout -->
+      <div class="flex flex-col justify-center items-center" data-aos="fade-right" data-aos-delay="200">
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg w-full">
+          <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white text-center">Contact Information</h3>
+          <div class="space-y-6">
+            <!-- Email -->
+            <div class="flex items-center">
+              <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
+              </div>
+              <div class="text-left">
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Email</h4>
+                <a href="mailto:contact@vijaykumar.com" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                  contact@vijaykumar.com
+                </a>
+              </div>
+            </div>
+            <!-- Phone -->
+            <div class="flex items-center">
+              <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                <i class="fas fa-phone-alt text-blue-600 dark:text-blue-400"></i>
+              </div>
+              <div class="text-left">
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Phone</h4>
+                <a href="tel:+1234567890" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                  +1 (234) 567-890
+                </a>
+              </div>
+            </div>
+            <!-- Location -->
+            <div class="flex items-center">
+              <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400"></i>
+              </div>
+              <div class="text-left">
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Location</h4>
+                <p class="text-gray-600 dark:text-gray-400">San Francisco, CA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Creative Callout -->
+        <div class="mt-10 bg-blue-50 dark:bg-blue-900 p-6 rounded-lg shadow-lg w-full text-center" data-aos="fade-up" data-aos-delay="300">
+          <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Let's Connect & Build Great Products Together!</h4>
+          <p class="text-gray-600 dark:text-gray-300">
+            I'm always interested in discussing product strategy, innovation, and how to deliver value to users. Let's connect!
+          </p>
+        </div>
+      </div>
+      
+      <!-- Right Column: Contact Form -->
+      <div data-aos="fade-left" data-aos-delay="300">
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send Me a Message</h3>
+          <form id="contact-form" class="space-y-6" novalidate>
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+              <input type="email" id="email" name="email" placeholder="Your email address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+              <p id="email-error" class="text-red-500 text-xs mt-1 hidden">Please enter a valid email address.</p>
+            </div>
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Subject of your message" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Your message" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"></textarea>
+            </div>
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <input id="privacy" name="privacy" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+              </div>
+              <div class="ml-3 text-sm">
+                <label for="privacy" class="font-medium text-gray-700 dark:text-gray-300">
+                  I agree to the <a href="#" class="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">privacy policy</a>
+                </label>
+              </div>
+            </div>
+            <div>
+              <button type="submit" class="w-full bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+		
+    </main>
 
     <!-- Footer Section -->
-    <footer style="background-color: var(--background);">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem; text-align: center; color: #333;">
-      <p style="color: #333;">Copyright &copy; 
-        <a href="https://www.linkedin.com/in/vijaykumar353/" style="color: var(--primary); text-decoration: none;" target="_blank">Vijay</a> | 
-        2025 | 
-        <a href="mailto:banothvijaykumar01@gmail.com" style="color: var(--primary); text-decoration: none;" target="_blank">banothvijaykumar01@gmail.com</a>
-      </p>
-      <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--primary);">Designed by Vijay</p>
+    
+	<footer class="bg-gray-900 text-white dark:bg-white dark:text-black py-12">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Brand Section -->
+      <div class="md:col-span-1">
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white font-bold">
+            VK
+          </div>
+          <span class="font-bold text-xl">VIJAY</span>
+        </div>
+        <p class="text-gray-400 dark:text-gray-600 mb-4">
+          Senior Solution Engineer transitioning into product management, using deep technical expertise, agile methods, and customer insights to drive innovative digital solutions.
+        </p>
+        <div class="flex space-x-4">
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white dark:hover:text-black transition-colors duration-300" aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white dark:hover:text-black transition-colors duration-300" aria-label="GitHub Profile">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Quick Links Section -->
+      <div class="md:col-span-1">
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <div class="grid grid-cols-2 gap-2">
+          <a href="#about" class="text-gray-400 hover:text-white dark:hover:text-black transition-colors duration-300 text-sm">About</a>
+          <a href="#experience" class="text-gray-400 hover:text-white dark:hover:text-black transition-colors duration-300 text-sm">Experience</a>
+          <a href="#projects" class="text-gray-400 hover:text-white dark:hover:text-black transition-colors duration-300 text-sm">Projects</a>
+          <a href="#case-studies" class="text-gray-400 hover:text-white dark:hover:text-black transition-colors duration-300 text-sm">Case Studies</a>
+          <a href="#skills" class="text-gray-400 hover:text-white dark:hover:text-black transition-colors duration-300 text-sm">Skills</a>
+          <a href="#certifications" class="text-gray-400 hover:text-white dark:hover:text-black transition-colors duration-300 text-sm">Certifications</a>
+          <a href="#education" class="text-gray-400 hover:text-white dark:hover:text-black transition-colors duration-300 text-sm">Education</a>
+          <a href="#contact" class="text-gray-400 hover:text-white dark:hover:text-black transition-colors duration-300 text-sm">Contact</a>
+        </div>
+      </div>
+      
+      <!-- Contact Information Section -->
+      <div class="md:col-span-1">
+        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+        <ul class="space-y-2 text-sm">
+          <li class="flex items-center">
+            <i class="fas fa-envelope mr-2 text-blue-400"></i>
+            <a href="mailto:contact@vijaykumar.com" class="text-gray-400 hover:text-white dark:hover:text-black transition-colors duration-300">contact@vijaykumar.com</a>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-phone-alt mr-2 text-blue-400"></i>
+            <a href="tel:+1234567890" class="text-gray-400 hover:text-white dark:hover:text-black transition-colors duration-300">+1 (234) 567-890</a>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>
+            <span class="text-gray-400">San Francisco, CA</span>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Newsletter Signup Section -->
+      <div class="md:col-span-1">
+        <h3 class="text-lg font-semibold mb-4">Stay Updated</h3>
+        <p class="text-gray-400 dark:text-gray-600 mb-4 text-sm">Subscribe to my newsletter for the latest updates on projects and articles.</p>
+        <form class="flex flex-col space-y-2">
+          <input type="email" placeholder="Your email address" class="px-4 py-2 bg-gray-800 text-white dark:bg-gray-200 dark:text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+          <button type="submit" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            Subscribe
+          </button>
+        </form>
+      </div>
     </div>
+    
+    <div class="border-t border-gray-800 dark:border-gray-300 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-400 dark:text-gray-600 text-sm mb-4 md:mb-0">2023 Vijay Kumar. All rights reserved.</p>
+      <div class="flex space-x-6">
+        <a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black text-sm transition-colors duration-300">Privacy Policy</a>
+        <a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black text-sm transition-colors duration-300">Terms of Service</a>
+        <a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black text-sm transition-colors duration-300">Sitemap</a>
+      </div>
+    </div>
+  </div>
 </footer>
+
 	
 	
+	
+	
+	
+	
+	
+    <!-- AOS Animation Library -->
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        darkModeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-        });
-
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark');
+document.addEventListener('DOMContentLoaded', function() {
+    /* -------------------- AOS Initialization -------------------- */
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
+    
+    /* -------------------- Dark Mode Toggle -------------------- */
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    const icon = darkModeToggle.querySelector('i');
+    
+    // Use saved preference or system preference
+    if (localStorage.getItem('darkMode') === 'enabled' ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('darkMode'))) {
+        enableDarkMode();
+    }
+    
+    darkModeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark')) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
         }
-
-        // Active Section Indicator
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${entry.target.id}`) {
-                            link.classList.add('active');
-                        }
-                    });
+    });
+    
+    function enableDarkMode() {
+        body.classList.add('dark');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('darkMode', 'enabled');
+    }
+    
+    function disableDarkMode() {
+        body.classList.remove('dark');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('darkMode', 'disabled');
+    }
+    
+    /* -------------------- Mobile Menu Toggle -------------------- */
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('show');
+        const isExpanded = mobileMenu.classList.contains('show');
+        mobileMenu.setAttribute('aria-hidden', !isExpanded);
+        mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+    });
+    
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('show');
+            mobileMenu.setAttribute('aria-hidden', true);
+            mobileMenuToggle.setAttribute('aria-expanded', false);
+        });
+    });
+    
+    /* -------------------- Project Filtering -------------------- */
+    const filterButtons = document.querySelectorAll('.project-filter');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Reset button classes
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active', 'bg-blue-600', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-800', 'dark:bg-gray-700', 'dark:text-gray-200');
+            });
+            // Set active for clicked button
+            button.classList.add('active', 'bg-blue-600', 'text-white');
+            button.classList.remove('bg-gray-200', 'text-gray-800', 'dark:bg-gray-700', 'dark:text-gray-200');
+            
+            const filter = button.getAttribute('data-filter');
+            projectCards.forEach(card => {
+                const categories = card.getAttribute('data-category');
+                if (filter === 'all' || categories.includes(filter)) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.classList.remove('opacity-0', 'scale-95');
+                        card.classList.add('opacity-100', 'scale-100');
+                    }, 50);
+                } else {
+                    card.classList.add('opacity-0', 'scale-95');
+                    card.classList.remove('opacity-100', 'scale-100');
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
                 }
             });
-        }, { threshold: 0.5 });
+        });
+    });
+    
+    /* -------------------- Skill Filtering -------------------- */
+    const skillFilterButtons = document.querySelectorAll('.skill-filter');
+    const skillCards = document.querySelectorAll('.skill-card');
+    
+    skillFilterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            skillFilterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            const filterValue = this.getAttribute('data-filter');
+            skillCards.forEach(card => {
+                if (filterValue === "all") {
+                    card.style.display = "";
+                } else {
+                    card.style.display = (card.getAttribute('data-category') === filterValue) ? "" : "none";
+                }
+            });
+        });
+    });
+    
+    /* -------------------- Active Navigation Tracking -------------------- */
+    function setActiveMenuItem() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const scrollPosition = window.scrollY + 100; // Offset for fixed header
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                document.querySelectorAll(`.nav-link[href="#${sectionId}"]`).forEach(link => {
+                    link.classList.add('active');
+                });
+            }
+        });
+    }
+    window.addEventListener('scroll', setActiveMenuItem);
+    window.addEventListener('load', setActiveMenuItem);
+    
+    /* -------------------- Navbar Shadow on Scroll -------------------- */
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('header');
+        if (window.pageYOffset > 50) {
+            navbar.classList.add('navbar-scrolled');
+        } else {
+            navbar.classList.remove('navbar-scrolled');
+        }
+    });
+    
+    /* -------------------- Smooth Scrolling for Anchors -------------------- */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    /* -------------------- Contact Form Validation -------------------- */
+    const contactForm = document.querySelector('#contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let valid = true;
+            const name = contactForm.querySelector('#name');
+            const email = contactForm.querySelector('#email');
+            const message = contactForm.querySelector('#message');
+            
+            [name, email, message].forEach(field => {
+                field.classList.remove('border-red-500');
+                const errorEl = field.nextElementSibling;
+                if (errorEl && errorEl.classList.contains('error-message')) {
+                    errorEl.remove();
+                }
+            });
+            
+            if (!name.value.trim()) {
+                showError(name, 'Name is required');
+                valid = false;
+            }
+            if (!email.value.trim()) {
+                showError(email, 'Email is required');
+                valid = false;
+            } else if (!isValidEmail(email.value)) {
+                showError(email, 'Please enter a valid email');
+                valid = false;
+            }
+            if (!message.value.trim()) {
+                showError(message, 'Message is required');
+                valid = false;
+            }
+            if (valid) {
+                const successMessage = document.createElement('div');
+                successMessage.className = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4';
+                successMessage.innerHTML = '<strong>Success!</strong> Your message has been sent.';
+                contactForm.appendChild(successMessage);
+                contactForm.reset();
+                setTimeout(() => {
+                    successMessage.remove();
+                }, 5000);
+            }
+        });
+        
+        function showError(field, message) {
+            field.classList.add('border-red-500');
+            const errorMessage = document.createElement('p');
+            errorMessage.className = 'text-red-500 text-xs mt-1 error-message';
+            errorMessage.textContent = message;
+            field.parentNode.insertBefore(errorMessage, field.nextSibling);
+        }
+        
+        function isValidEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+    }
+    
+    /* -------------------- Intersection Observers for Animations -------------------- */
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const slideElements = document.querySelectorAll('.slide-up');
+    
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100');
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    const slideObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('translate-y-0', 'opacity-100');
+                slideObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    fadeElements.forEach(el => {
+        el.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+        fadeObserver.observe(el);
+    });
+    
+    slideElements.forEach(el => {
+        el.classList.add('transform', 'translate-y-10', 'opacity-0', 'transition', 'duration-500');
+        slideObserver.observe(el);
+    });
+});
 
-        sections.forEach(section => observer.observe(section));
-    </script>
+
+/* -------------------- Case Study-------------------- */
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.case-filter');
+    const caseCards = document.querySelectorAll('.case-card');
+
+    // Normalization function: lowercase and replace spaces with hyphens
+    const normalize = str => str.toLowerCase().replace(/\s+/g, '-').trim();
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Reset all buttons
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active', 'bg-blue-600', 'text-white');
+          btn.classList.add('bg-gray-200', 'text-gray-800', 'dark:bg-gray-700', 'dark:text-gray-200');
+        });
+        // Activate clicked button
+        this.classList.add('active', 'bg-blue-600', 'text-white');
+        this.classList.remove('bg-gray-200', 'text-gray-800', 'dark:bg-gray-700', 'dark:text-gray-200');
+
+        const filterValue = normalize(this.getAttribute('data-filter'));
+
+        caseCards.forEach(card => {
+          // Normalize card categories (allowing multiple space-separated categories)
+          const categories = card.getAttribute('data-category').split(/\s+/).map(normalize);
+          if (filterValue === 'all' || categories.includes(filterValue)) {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.classList.remove('opacity-0', 'scale-95');
+              card.classList.add('opacity-100', 'scale-100');
+            }, 50);
+          } else {
+            card.classList.add('opacity-0', 'scale-95');
+            card.classList.remove('opacity-100', 'scale-100');
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+  });
+
+
+/* -------------------- Certification Animations -------------------- */
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('cert-modal');
+  const modalImg = document.getElementById('cert-modal-img');
+  const modalClose = document.getElementById('cert-modal-close');
+  
+  // When a "View Certification" link is clicked, open the modal with the full image.
+  const viewCertLinks = document.querySelectorAll('.view-cert');
+  viewCertLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const card = this.closest('.cert-card');
+      const img = card.querySelector('img');
+      modalImg.src = img.src;
+      modal.classList.remove('hidden');
+    });
+  });
+  
+  // Close the modal when clicking the close button.
+  modalClose.addEventListener('click', function() {
+    modal.classList.add('hidden');
+  });
+  
+  // Close the modal when clicking outside the image.
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
+  
+  // Close the modal on pressing the Escape key.
+  document.addEventListener('keydown', function(e) {
+    if (e.key === "Escape" && !modal.classList.contains('hidden')) {
+      modal.classList.add('hidden');
+    }
+  });
+});
 	
 
-    <!-- JavaScript 
-    <script>
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const navLinks = document.querySelectorAll('.nav-link');
+/* -------------------- Contact me Email -------------------- */
 
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        darkModeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-        });
-
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark');
-        }
-
-        // Active Section Indicator
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${entry.target.id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, { threshold: 0.5 });
-
-        sections.forEach(section => observer.observe(section));
-    </script> -->
+  // Email validation for contact form
+  const contactForm = document.getElementById('contact-form');
+  const emailInput = document.getElementById('email');
+  const emailError = document.getElementById('email-error');
+  
+  contactForm.addEventListener('submit', function(e) {
+    if (!emailInput.checkValidity()) {
+      e.preventDefault();
+      emailError.classList.remove('hidden');
+      emailInput.classList.add('border-red-500');
+    } else {
+      emailError.classList.add('hidden');
+      emailInput.classList.remove('border-red-500');
+    }
+  });
+  
+  emailInput.addEventListener('input', function() {
+    if (emailInput.checkValidity()) {
+      emailError.classList.add('hidden');
+      emailInput.classList.remove('border-red-500');
+    } else {
+      emailError.classList.remove('hidden');
+      emailInput.classList.add('border-red-500');
+    }
+  });
+</script>
+	
 </body>
 </html>
+
