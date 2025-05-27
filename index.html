@@ -813,6 +813,7 @@
 		
 	<!-- Projects Section -->
 
+
 <section id="projects" class="py-20 bg-[var(--background)] dark:bg-[var(--dark-background)]">
     <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white" data-aos="fade-up">
@@ -836,11 +837,43 @@
             <button class="project-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="development">
                 Development
             </button>
+            <button class="project-filter px-6 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-filter="ai">
+                AI/ML
+            </button>
         </div>
         
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project Card 1: Automated Home Beverage System -->
+            <!-- Project Card: Airfare Price Prediction -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development ai" data-aos="fade-up" data-aos-delay="700">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Airfare Price Prediction" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Development</span>
+                                <span class="px-2 py-1 bg-purple-600 text-white text-xs rounded">ML</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Airfare Price Prediction</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        Developed predictive models using Python and Pandas on 638 airfare records, achieving normalized dataset with MinMaxScaler for accurate price forecasting.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card: Automated Home Beverage System -->
             <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="product ux" data-aos="fade-up" data-aos-delay="100">
                 <div class="relative overflow-hidden group h-64">
                     <img src="Images/vespera01.webp" alt="Automated Home Beverage System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -868,23 +901,24 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Project Card 2: Retail Analytics Dashboard -->
-            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development" data-aos="fade-up" data-aos-delay="200">
+
+            <!-- Project Card: Enhanced Event Management Platform -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development product" data-aos="fade-up" data-aos-delay="1200">
                 <div class="relative overflow-hidden group h-64">
-                    <img src="Images/retail01.png" alt="Retail Analytics Dashboard" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Enhanced Event Management Platform" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
                         <div class="p-4">
                             <div class="flex space-x-2 mb-2">
                                 <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Development</span>
+                                <span class="px-2 py-1 bg-blue-600 text-white text-xs rounded">Product</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="p-6 pb-16 relative">
-                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Retail Analytics Dashboard</h3>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Enhanced Event Management Platform</h3>
                     <p class="text-gray-600 dark:text-gray-400 mb-4">
-                        Architected a data warehouse with optimized ETL workflows to create real-time dashboards that boosted sales.
+                        Extended Nexus with mobile-responsive design, integrated Stripe and PayPal payment gateways, and real-time analytics dashboards—boosting event engagement by 25%.
                     </p>
                     <div class="absolute bottom-6 right-6 flex space-x-2">
                         <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
@@ -896,36 +930,8 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Project Card 3: Quality of Life App Design -->
-            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="ux" data-aos="fade-up" data-aos-delay="300">
-                <div class="relative overflow-hidden group h-64">
-                    <img src="Images/quality01.png" alt="Quality of Life App Design" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
-                        <div class="p-4">
-                            <div class="flex space-x-2 mb-2">
-                                <span class="px-2 py-1 bg-blue-600 text-white text-xs rounded">UX</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-6 pb-16 relative">
-                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Quality of Life App Design</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">
-                        LiveSafe integrates real-time crime stats with quality-of-life metrics in a unified platform.
-                    </p>
-                    <div class="absolute bottom-6 right-6 flex space-x-2">
-                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
-                            <i class="fas fa-file-alt"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project Card 4: Event Management System -->
+
+            <!-- Project Card: Event Management System -->
             <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development" data-aos="fade-up" data-aos-delay="400">
                 <div class="relative overflow-hidden group h-64">
                     <img src="Images/ems01.jpg" alt="Event Management System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -952,23 +958,24 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Project Card 5: Word Problem Solver -->
-            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development" data-aos="fade-up" data-aos-delay="500">
+
+            <!-- Project Card: GenAI Agentic RAG System -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development ai" data-aos="fade-up" data-aos-delay="1100">
                 <div class="relative overflow-hidden group h-64">
-                    <img src="Images/wps01.jpg" alt="Word Problem Solver" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2032&q=80" alt="AI RAG System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
                         <div class="p-4">
                             <div class="flex space-x-2 mb-2">
                                 <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Development</span>
+                                <span class="px-2 py-1 bg-orange-600 text-white text-xs rounded">AI</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="p-6 pb-16 relative">
-                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Word Problem Solver</h3>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">GenAI Agentic RAG System</h3>
                     <p class="text-gray-600 dark:text-gray-400 mb-4">
-                        An AI-driven system using IBM CPLEX and SVM to solve algebra word problems, reducing solution time by 35%.
+                        Built AI-powered ReAct agent with RAG pipeline using LLaMA3, achieving 90%+ accuracy and sub-2-second response times with Streamlit interface.
                     </p>
                     <div class="absolute bottom-6 right-6 flex space-x-2">
                         <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
@@ -980,8 +987,8 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Project Card 6: Hostel Management System -->
+
+            <!-- Project Card: Hostel Management System -->
             <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development" data-aos="fade-up" data-aos-delay="600">
                 <div class="relative overflow-hidden group h-64">
                     <img src="Images/hms01.jpg" alt="Hostel Management System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -1008,9 +1015,182 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
+            <!-- Project Card: Housing Value Prediction -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development ai" data-aos="fade-up" data-aos-delay="800">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Housing Value Prediction" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Development</span>
+                                <span class="px-2 py-1 bg-purple-600 text-white text-xs rounded">ML</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Housing Value Prediction</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        Built multiple linear regression model on 5,802 West Roxbury housing records, achieving test RMSE of 46.39 and R² of 0.79 for accurate home value assessments.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card: Personal Loan Acceptance Classifier -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development ai" data-aos="fade-up" data-aos-delay="900">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Personal Loan Classifier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Development</span>
+                                <span class="px-2 py-1 bg-purple-600 text-white text-xs rounded">ML</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Personal Loan Acceptance Classifier</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        Developed k-NN and logistic regression classifiers on Universal Bank dataset, achieving F1 scores of 0.95 and 0.92 for loan acceptance prediction.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card: Quality of Life App Design -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="ux" data-aos="fade-up" data-aos-delay="300">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="Images/quality01.png" alt="Quality of Life App Design" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-blue-600 text-white text-xs rounded">UX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Quality of Life App Design</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        LiveSafe integrates real-time crime stats with quality-of-life metrics in a unified platform.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card: Retail Analytics Dashboard -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="Images/retail01.png" alt="Retail Analytics Dashboard" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Retail Analytics Dashboard</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        Architected a data warehouse with optimized ETL workflows to create real-time dashboards that boosted sales.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card: Vehicle Price Prediction System -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development ai" data-aos="fade-up" data-aos-delay="1000">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Vehicle Price Prediction" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Development</span>
+                                <span class="px-2 py-1 bg-purple-600 text-white text-xs rounded">ML</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Vehicle Price Prediction System</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        Optimized Decision Tree model for Toyota Corolla auction pricing, achieving RMSE of 1,302 with superior accuracy for live auction forecasting.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card: Word Problem Solver -->
+            <div class="project-card relative bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg card-hover" data-category="development ai" data-aos="fade-up" data-aos-delay="500">
+                <div class="relative overflow-hidden group h-64">
+                    <img src="Images/wps01.jpg" alt="Word Problem Solver" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <div class="flex space-x-2 mb-2">
+                                <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Development</span>
+                                <span class="px-2 py-1 bg-purple-600 text-white text-xs rounded">AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pb-16 relative">
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Word Problem Solver</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        An AI-driven system using IBM CPLEX and SVM to solve algebra word problems, reducing solution time by 35%.
+                    </p>
+                    <div class="absolute bottom-6 right-6 flex space-x-2">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300" aria-label="View Documentation">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end grid -->
+    </div> <!-- end container -->
 </section>
+
 
 
 
@@ -1053,148 +1233,150 @@
     </div>
     
     <!-- Case Studies Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      
-      <!-- Case Study 1 -->
-      <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="audit-assurance" data-aos="fade-up" data-aos-delay="200">
-        <div class="relative">
-          <img src="Images/cs1.png" alt="Audit & IT Controls for Financial Reporting" class="w-full h-64 object-cover">
-          <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-            Audit Assurance
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
-            Audit & IT Controls for Financial Reporting
-          </h3>
-          <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
-            Smithsonian Banking Group faced critical security and compliance risks in its internet banking system. I assessed vulnerabilities across financial applications and designed 20+ business rules that reduced compliance gaps by 35% and security risks by 70%.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">IT Controls</span>
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Compliance</span>
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Fraud Prevention</span>
-          </div>
-        </div>
+
+<!-- Case Studies Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+  <!-- Case Study: Audit & IT Controls for Financial Reporting -->
+  <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="audit-assurance" data-aos="fade-up" data-aos-delay="200">
+    <div class="relative">
+      <img src="Images/cs1.png" alt="Audit & IT Controls for Financial Reporting" class="w-full h-64 object-cover">
+      <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+        Audit Assurance
       </div>
-      
-      <!-- Case Study 2 -->
-      <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="governance-risk" data-aos="fade-up" data-aos-delay="300">
-        <div class="relative">
-          <img src="Images/cs2.png" alt="Major Manufacturing Case Using COBIT5" class="w-full h-64 object-cover">
-          <div class="absolute top-4 right-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-            Governance & Risk
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
-            Major Manufacturing Case Using COBIT5
-          </h3>
-          <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
-            Major Manufacturing faced governance risks, ERP security gaps, and audit independence issues. I conducted a COBIT 5–aligned risk assessment to identify vulnerabilities and recommended restructuring and security enhancements.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">COBIT5</span>
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Governance</span>
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">ERP Security</span>
-          </div>
-        </div>
+    </div>
+    <div class="p-6">
+      <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+        Audit & IT Controls for Financial Reporting
+      </h3>
+      <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
+        Smithsonian Banking Group faced critical security and compliance risks in its internet banking system. I assessed vulnerabilities across financial applications and designed 20+ business rules that reduced compliance gaps by 35% and security risks by 70%.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">IT Controls</span>
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Compliance</span>
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Fraud Prevention</span>
       </div>
-      
-      <!-- Case Study 3 -->
-      <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="risk-assessment" data-aos="fade-up" data-aos-delay="400">
-        <div class="relative">
-          <img src="Images/cs3.png" alt="Smithsonian Banking Group Case" class="w-full h-64 object-cover">
-          <div class="absolute top-4 right-4 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-            Risk Assessment
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
-            Smithsonian Banking Group Case
-          </h3>
-          <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
-            The internet banking system at Smithsonian Banking Group had significant security gaps. Using a COBIT 5–aligned risk assessment, I strengthened security controls and deployed SIEM for real-time threat detection, reducing risks by 70%.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Risk Assessment</span>
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">SIEM</span>
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Cybersecurity</span>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Case Study 4 -->
-      <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="it-assurance" data-aos="fade-up" data-aos-delay="500">
-        <div class="relative">
-          <img src="Images/cs4.png" alt="Claim-proof Insurance (IT Audit Assurance)" class="w-full h-64 object-cover">
-          <div class="absolute top-4 right-4 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-            IT Assurance
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
-            Claim-proof Insurance (IT Audit Assurance)
-          </h3>
-          <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
-            ClaimProof Insurance faced security risks in its change control process. An IT assurance audit using COBIT 5 led to the implementation of secure OTP storage, automated log reconciliation, and structured change management—reducing unauthorized changes by 40%.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">IT Audit</span>
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Log Audits</span>
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Change Management</span>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Case Study 5 -->
-      <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="information-security" data-aos="fade-up" data-aos-delay="600">
-        <div class="relative">
-          <img src="Images/cs5.png" alt="Upward Round Airlines (Information Security)" class="w-full h-64 object-cover">
-          <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-            Information Security
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
-            Upward Round Airlines (Information Security)
-          </h3>
-          <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
-            During its cloud migration, Upward Bound Airlines faced security, compliance, and operational risks. A COBIT 5–aligned risk assessment led to the implementation of cloud-native security measures that improved risk mitigation by 60%.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Cloud Security</span>
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Risk Mitigation</span>
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Operational Resilience</span>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Case Study 6 -->
-      <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="cybersecurity" data-aos="fade-up" data-aos-delay="700">
-        <div class="relative">
-          <img src="Images/ec01.png" alt="Enhancing Cybersecurity Defensive Controls Using AI" class="w-full h-64 object-cover">
-          <div class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-            Cybersecurity
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
-            Enhancing Cybersecurity Defensive Controls Using AI
-          </h3>
-          <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
-            Modern cyber threats were outpacing traditional defenses. By integrating machine learning, reinforcement learning, and NLP, I enhanced real-time threat detection and automated responses—reducing breach detection time by 90%.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">AI</span>
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Machine Learning</span>
-            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Threat Detection</span>
-          </div>
-        </div>
-      </div>
-      
     </div>
   </div>
+
+  <!-- Case Study: Claim-proof Insurance (IT Audit Assurance) -->
+  <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="it-assurance" data-aos="fade-up" data-aos-delay="500">
+    <div class="relative">
+      <img src="Images/cs4.png" alt="Claim-proof Insurance (IT Audit Assurance)" class="w-full h-64 object-cover">
+      <div class="absolute top-4 right-4 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+        IT Assurance
+      </div>
+    </div>
+    <div class="p-6">
+      <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+        Claim-proof Insurance (IT Audit Assurance)
+      </h3>
+      <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
+        ClaimProof Insurance faced security risks in its change control process. An IT assurance audit using COBIT 5 led to the implementation of secure OTP storage, automated log reconciliation, and structured change management—reducing unauthorized changes by 40%.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">IT Audit</span>
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Log Audits</span>
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Change Management</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study: Enhancing Cybersecurity Defensive Controls Using AI -->
+  <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="cybersecurity" data-aos="fade-up" data-aos-delay="700">
+    <div class="relative">
+      <img src="Images/ec01.png" alt="Enhancing Cybersecurity Defensive Controls Using AI" class="w-full h-64 object-cover">
+      <div class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+        Cybersecurity
+      </div>
+    </div>
+    <div class="p-6">
+      <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+        Enhancing Cybersecurity Defensive Controls Using AI
+      </h3>
+      <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
+        Modern cyber threats were outpacing traditional defenses. By integrating machine learning, reinforcement learning, and NLP, I enhanced real-time threat detection and automated responses—reducing breach detection time by 90%.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">AI</span>
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Threat Detection</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study: Major Manufacturing Case Using COBIT5 -->
+  <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="governance-risk" data-aos="fade-up" data-aos-delay="300">
+    <div class="relative">
+      <img src="Images/cs2.png" alt="Major Manufacturing Case Using COBIT5" class="w-full h-64 object-cover">
+      <div class="absolute top-4 right-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+        Governance & Risk
+      </div>
+    </div>
+    <div class="p-6">
+      <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+        Major Manufacturing Case Using COBIT5
+      </h3>
+      <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
+        Major Manufacturing faced governance risks, ERP security gaps, and audit independence issues. I conducted a COBIT 5–aligned risk assessment to identify vulnerabilities and recommended restructuring and security enhancements.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">COBIT5</span>
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Governance</span>
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">ERP Security</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study: Smithsonian Banking Group Case -->
+  <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="risk-assessment" data-aos="fade-up" data-aos-delay="400">
+    <div class="relative">
+      <img src="Images/cs3.png" alt="Smithsonian Banking Group Case" class="w-full h-64 object-cover">
+      <div class="absolute top-4 right-4 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+        Risk Assessment
+      </div>
+    </div>
+    <div class="p-6">
+      <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+        Smithsonian Banking Group Case
+      </h3>
+      <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
+        The internet banking system at Smithsonian Banking Group had significant security gaps. Using a COBIT 5–aligned risk assessment, I strengthened security controls and deployed SIEM for real-time threat detection, reducing risks by 70%.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Risk Assessment</span>
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">SIEM</span>
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Cybersecurity</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study: Upward Round Airlines (Information Security) -->
+  <div class="case-card bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg overflow-hidden shadow-lg card-hover" data-category="information-security" data-aos="fade-up" data-aos-delay="600">
+    <div class="relative">
+      <img src="Images/cs5.png" alt="Upward Round Airlines (Information Security)" class="w-full h-64 object-cover">
+      <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+        Information Security
+      </div>
+    </div>
+    <div class="p-6">
+      <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+        Upward Round Airlines (Information Security)
+      </h3>
+      <p class="text-gray-700 dark:text-gray-400 mt-2 mb-6">
+        During its cloud migration, Upward Bound Airlines faced security, compliance, and operational risks. A COBIT 5–aligned risk assessment led to the implementation of cloud-native security measures that improved risk mitigation by 60%.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Cloud Security</span>
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Risk Mitigation</span>
+        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm">Operational Resilience</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 </section>
 
 
